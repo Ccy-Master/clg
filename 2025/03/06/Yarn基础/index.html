@@ -18,19 +18,19 @@
   
   
   <title>Yarn基础 | Bigdata</title>
-  <meta name="description" content="Yarn&amp;#x57FA;&amp;#x7840;1:YARN&amp;#x961F;&amp;#x5217;&amp;#x8D44;&amp;#x6E90;&amp;#x5206;&amp;#x914D;&amp;#xFF1A;yarn.nodemanager.resource.memory-mb 58G   &amp;#x3010;&amp;#x8BF4;&amp;#x660E;&amp;#x3011;&amp;#x8868;&amp;#x793A;&amp;#x8BE5;&amp;#x8282;&amp;#x70B9;&amp;#x4">
+  <meta name="description" content="Yarn基础1:YARN队列资源分配：yarn.nodemanager.resource.memory-mb 58G   【说明】表示该节点上YARN可使用的物理内存总量，单位M。建议配置成节点物理内存总量的75%-90%。若该节点有其他业务的常驻进程，请降低此参数值给该进程预留足够运行资源。yarn.nodemanager.resource.cpu-vcores 32        【说明】可分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yarn基础">
-<meta property="og:url" content="https://c-mrrobot.github.io/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://ccy-master.github.io/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Bigdata大数据">
-<meta property="og:description" content="Yarn&amp;#x57FA;&amp;#x7840;1:YARN&amp;#x961F;&amp;#x5217;&amp;#x8D44;&amp;#x6E90;&amp;#x5206;&amp;#x914D;&amp;#xFF1A;yarn.nodemanager.resource.memory-mb 58G   &amp;#x3010;&amp;#x8BF4;&amp;#x660E;&amp;#x3011;&amp;#x8868;&amp;#x793A;&amp;#x8BE5;&amp;#x8282;&amp;#x70B9;&amp;#x4">
+<meta property="og:description" content="Yarn基础1:YARN队列资源分配：yarn.nodemanager.resource.memory-mb 58G   【说明】表示该节点上YARN可使用的物理内存总量，单位M。建议配置成节点物理内存总量的75%-90%。若该节点有其他业务的常驻进程，请降低此参数值给该进程预留足够运行资源。yarn.nodemanager.resource.cpu-vcores 32        【说明】可分">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-03-06T03:15:04.000Z">
 <meta property="article:modified_time" content="2025-03-06T03:27:06.034Z">
-<meta property="article:author" content="MrRobot.C">
+<meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://c-mrrobot.github.io/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="https://ccy-master.github.io/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Bigdata大数据" type="application/atom+xml">
   
@@ -38,7 +38,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/ei.github.io/css/style.css">
+<link rel="stylesheet" href="/clg/css/style.css">
 
   
   
@@ -55,7 +55,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://github.com/C-MrRobot" target="_blank">
-          <img class="img-circle img-rotate" src="/ei.github.io/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/clg/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">MrRobot.C</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Bigdata Devops</h3>
@@ -99,7 +99,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/ei.github.io/.">
+          <a href="/clg/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -109,7 +109,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/ei.github.io/archives">
+          <a href="/clg/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -119,7 +119,7 @@
         
         
         <li class="menu-item menu-item-categories">
-          <a href="/ei.github.io/categories">
+          <a href="/clg/categories">
             
             <i class="icon icon-folder"></i>
             
@@ -129,7 +129,7 @@
         
         
         <li class="menu-item menu-item-tags">
-          <a href="/ei.github.io/tags">
+          <a href="/clg/tags">
             
             <i class="icon icon-tags"></i>
             
@@ -139,7 +139,7 @@
         
         
         <li class="menu-item menu-item-repository">
-          <a href="/ei.github.io/repository">
+          <a href="/clg/repository">
             
             <i class="icon icon-project"></i>
             
@@ -149,7 +149,7 @@
         
         
         <li class="menu-item menu-item-books">
-          <a href="/ei.github.io/books">
+          <a href="/clg/books">
             
             <i class="icon icon-book-fill"></i>
             
@@ -159,7 +159,7 @@
         
         
         <li class="menu-item menu-item-links">
-          <a href="/ei.github.io/links">
+          <a href="/clg/links">
             
             <i class="icon icon-friendship"></i>
             
@@ -169,7 +169,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/ei.github.io/about">
+          <a href="/clg/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -186,7 +186,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +241,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
+                <a href="/clg/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
               </p>
               <p class="item-date">
                 <time datetime="2026-01-11T07:54:33.000Z" itemprop="datePublished">2026-01-11</time>
@@ -256,10 +256,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/hello-world/" class="title">Hello World</a>
+                <a href="/clg/2025/03/26/hello-world/" class="title">Hello World</a>
               </p>
               <p class="item-date">
-                <time datetime="2025-03-06T06:44:13.868Z" itemprop="datePublished">2025-03-06</time>
+                <time datetime="2025-03-26T09:33:08.174Z" itemprop="datePublished">2025-03-26</time>
               </p>
             </div>
           </li>
@@ -271,7 +271,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
+                <a href="/clg/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:22:33.000Z" itemprop="datePublished">2025-03-06</time>
@@ -286,7 +286,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
+                <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:15:04.000Z" itemprop="datePublished">2025-03-06</time>
@@ -301,7 +301,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
+                <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-05T06:56:26.000Z" itemprop="datePublished">2025-03-05</time>
@@ -337,7 +337,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="article-date">
+	<a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="article-date">
 	  <time datetime="2025-03-06T03:15:04.000Z" itemprop="datePublished">2025-03-06</time>
 	</a>
 </span>
@@ -346,25 +346,25 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="Yarn&#x57FA;&#x7840;"><a href="#Yarn&#x57FA;&#x7840;" class="headerlink" title="Yarn&#x57FA;&#x7840;"></a>Yarn&#x57FA;&#x7840;</h2><p>1:YARN&#x961F;&#x5217;&#x8D44;&#x6E90;&#x5206;&#x914D;&#xFF1A;<br>yarn.nodemanager.resource.memory-mb 58G   &#x3010;&#x8BF4;&#x660E;&#x3011;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x4E0A;YARN&#x53EF;&#x4F7F;&#x7528;&#x7684;&#x7269;&#x7406;&#x5185;&#x5B58;&#x603B;&#x91CF;&#xFF0C;&#x5355;&#x4F4D;M&#x3002;&#x5EFA;&#x8BAE;&#x914D;&#x7F6E;&#x6210;&#x8282;&#x70B9;&#x7269;&#x7406;&#x5185;&#x5B58;&#x603B;&#x91CF;&#x7684;75%-90%&#x3002;&#x82E5;&#x8BE5;&#x8282;&#x70B9;&#x6709;&#x5176;&#x4ED6;&#x4E1A;&#x52A1;&#x7684;&#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;&#xFF0C;&#x8BF7;&#x964D;&#x4F4E;&#x6B64;&#x53C2;&#x6570;&#x503C;&#x7ED9;&#x8BE5;&#x8FDB;&#x7A0B;&#x9884;&#x7559;&#x8DB3;&#x591F;&#x8FD0;&#x884C;&#x8D44;&#x6E90;&#x3002;<br>yarn.nodemanager.resource.cpu-vcores 32        &#x3010;&#x8BF4;&#x660E;&#x3011;&#x53EF;&#x5206;&#x914D;&#x7ED9;container&#x7684;CPU&#x6838;&#x6570;&#x3002;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x4E0A;NodeManager&#x53EF;&#x4F7F;&#x7528;&#x7684;&#x865A;&#x62DF;CPU&#x6838;&#x6570;&#xFF0C;&#x5EFA;&#x8BAE;&#x6309;&#x8282;&#x70B9;&#x5B9E;&#x9645;&#x903B;&#x8F91;&#x6838;&#x6570;&#x7684;1.5&#x5230;2&#x500D;&#x914D;&#x7F6E;&#x3002;</p>
-<p>2:YARN&#x5F00;&#x6E90;&#x63A5;&#x53E3;&#xFF1A;<br><a target="_blank" rel="noopener" href="http://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html">http://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html</a></p>
-<p>&#x5B89;&#x5168;&#x96C6;&#x7FA4;&#xFF1A;<br>kinit user<br>curl -k -i &#x2013;negotiate -u : &#x201C;<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/metrics">https://192.168.0.108:8090/ws/v1/cluster/metrics</a>&#x201C;<br>curl -k -i &#x2013;negotiate -u : &#x201C;<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/">https://192.168.0.108:8090/ws/v1/cluster/</a>&#x201C;<br>curl -k -i &#x2013;negotiate -u : &#x201C;<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/scheduler">https://192.168.0.108:8090/ws/v1/cluster/scheduler</a>&#x201C;<br>&#x975E;&#x5B89;&#x5168;&#x96C6;&#x7FA4;&#xFF1A;<br>curl -k -i &#x2013;negotiate -u : &#x201C;<a target="_blank" rel="noopener" href="http://192.168.0.244:8088/ws/v1/cluster/metrics">http://192.168.0.244:8088/ws/v1/cluster/metrics</a>&#x201C;<br>curl -k -i &#x2013;negotiate -u : &#x201C;<a target="_blank" rel="noopener" href="http://192.168.0.108:8088/ws/v1/cluster/">http://192.168.0.108:8088/ws/v1/cluster/</a>&#x201C;</p>
-<p>{JSONUtil.toString(JSONUtil.path(Job.getNodeOutput(&#x201C;Rest_Client_1958&#x201D;),&#x201D;clusterMetrics[0].appsRunning&#x201D;))} &gt; 2</p>
-<p>3&#xFF1A;yarn &#x4F5C;&#x4E1A;&#x5927;&#x91CF;NEW_SAVING&#x72B6;&#x6001;<br>&#x91CD;&#x542F;ZooKeeperr&#x5E76;&#x4E0D;&#x4F1A;&#x8BA9;resourcemanager&#x72B6;&#x6001;&#x5207;&#x6362;&#x56DE;&#x53BB;,&#x91CD;&#x542F;resourcemanager&#x624D;&#x80FD;&#x8BA9;resourcemanager&#x91CD;&#x65B0;&#x6CE8;&#x518C;&#x5230;ZooKeeperr&#x4E2D;</p>
-<p>4&#xFF1A;yarn &#x4EFB;&#x52A1;&#x5927;&#x91CF;&#x5806;&#x79EF;&#x5BFC;&#x81F4;&#x5B9E;&#x4F8B;&#x6302;&#x6389;&#xFF1A;</p>
-<p>yarn.resourcemanager.max-completed-applications &#x4FEE;&#x6539;10000&#x2014;100 &#x540E;&#x81EA;&#x52A8;&#x8001;&#x5316;&#xFF0C;&#x91CD;&#x65B0;&#x62C9;&#x8D77;&#x5B9E;&#x4F8B;&#x5373;&#x53EF;&#xFF0C; &#x4E0D;&#x7528;&#x5220; &#x4E5F;&#x53EF;&#x4EE5;</p>
-<p>#YARN&#x547D;&#x4EE4;<br>&#x67E5;&#x770B;application<br>yarn application -list<br>yarn app -list<br>      yarn app -list -appStates All| head  100</p>
-<pre><code>yarn app -list -appTypes &apos;Apache Flink&apos;
+        <h2 id="Yarn基础"><a href="#Yarn基础" class="headerlink" title="Yarn基础"></a>Yarn基础</h2><p>1:YARN队列资源分配：<br>yarn.nodemanager.resource.memory-mb 58G   【说明】表示该节点上YARN可使用的物理内存总量，单位M。建议配置成节点物理内存总量的75%-90%。若该节点有其他业务的常驻进程，请降低此参数值给该进程预留足够运行资源。<br>yarn.nodemanager.resource.cpu-vcores 32        【说明】可分配给container的CPU核数。设置当前节点上NodeManager可使用的虚拟CPU核数，建议按节点实际逻辑核数的1.5到2倍配置。</p>
+<p>2:YARN开源接口：<br><a target="_blank" rel="noopener" href="http://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html">http://hadoop.apache.org/docs/r3.1.1/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html</a></p>
+<p>安全集群：<br>kinit user<br>curl -k -i –negotiate -u : “<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/metrics">https://192.168.0.108:8090/ws/v1/cluster/metrics</a>“<br>curl -k -i –negotiate -u : “<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/">https://192.168.0.108:8090/ws/v1/cluster/</a>“<br>curl -k -i –negotiate -u : “<a target="_blank" rel="noopener" href="https://192.168.0.108:8090/ws/v1/cluster/scheduler">https://192.168.0.108:8090/ws/v1/cluster/scheduler</a>“<br>非安全集群：<br>curl -k -i –negotiate -u : “<a target="_blank" rel="noopener" href="http://192.168.0.244:8088/ws/v1/cluster/metrics">http://192.168.0.244:8088/ws/v1/cluster/metrics</a>“<br>curl -k -i –negotiate -u : “<a target="_blank" rel="noopener" href="http://192.168.0.108:8088/ws/v1/cluster/">http://192.168.0.108:8088/ws/v1/cluster/</a>“</p>
+<p>{JSONUtil.toString(JSONUtil.path(Job.getNodeOutput(“Rest_Client_1958”),”clusterMetrics[0].appsRunning”))} &gt; 2</p>
+<p>3：yarn 作业大量NEW_SAVING状态<br>重启ZooKeeperr并不会让resourcemanager状态切换回去,重启resourcemanager才能让resourcemanager重新注册到ZooKeeperr中</p>
+<p>4：yarn 任务大量堆积导致实例挂掉：</p>
+<p>yarn.resourcemanager.max-completed-applications 修改10000—100 后自动老化，重新拉起实例即可， 不用删 也可以</p>
+<p>#YARN命令<br>查看application<br>yarn application -list<br>yarn app -list<br>      yarn app -list -appStates All| head  100</p>
+<pre><code>yarn app -list -appTypes &#39;Apache Flink&#39;
 </code></pre>
-<p>&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#xFF1A;<br>yarn logs -applicationId <application_id> &gt; <output_file></output_file></application_id></p>
-<p>&#x6740;&#x6389;&#x4EFB;&#x52A1;&#xFF1A;<br>yarn application  -kill application_xxx_xxx<br>yarn app -kill application_1633941199020_0029</p>
-<p>for i in  <code>yarn application  -list | grep -w  RUNNING | awk &apos;{print $1}&apos; | grep application_</code>; do yarn  application -kill $i; done</p>
+<p>查看日志：<br>yarn logs -applicationId <application_id> &gt; <output_file></output_file></application_id></p>
+<p>杀掉任务：<br>yarn application  -kill application_xxx_xxx<br>yarn app -kill application_1633941199020_0029</p>
+<p>for i in  <code>yarn application  -list | grep -w  RUNNING | awk &#39;&#123;print $1&#125;&#39; | grep application_</code>; do yarn  application -kill $i; done</p>
 <p>yarn.resourcemanager.state-store.max-completed-applications</p>
 
       
@@ -375,7 +375,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://c-mrrobot.github.io/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" title="Yarn基础" target="_blank" rel="external">https://c-mrrobot.github.io/ei.github.io/2025/03/06/Yarn基础/</a>
+      <a href="https://ccy-master.github.io/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" title="Yarn基础" target="_blank" rel="external">https://ccy-master.github.io/clg/2025/03/06/Yarn基础/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -390,7 +390,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/C-MrRobot" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/ei.github.io/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/clg/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -422,12 +422,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/ei.github.io/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Clickhouse由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/clg/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Clickhouse由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" title="Flink基础"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" title="Flink基础"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -462,14 +462,14 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
@@ -504,7 +504,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -520,10 +520,10 @@
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/ei.github.io/js/plugin.min.js"></script>
+<script src="/clg/js/plugin.min.js"></script>
 
 
-<script src="/ei.github.io/js/application.js"></script>
+<script src="/clg/js/application.js"></script>
 
 
     <script>
@@ -536,14 +536,14 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/ei.github.io/',
-        CONTENT_URL: '/ei.github.io/content.json',
+        ROOT_URL: '/clg/',
+        CONTENT_URL: '/clg/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/ei.github.io/js/insight.js"></script>
+<script src="/clg/js/insight.js"></script>
 
 
 

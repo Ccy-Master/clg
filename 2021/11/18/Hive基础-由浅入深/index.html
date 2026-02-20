@@ -18,21 +18,21 @@
   
   
   <title>Hive基础-由浅入深 | Bigdata</title>
-  <meta name="description" content="Hive&amp;#x5E38;&amp;#x7528;&amp;#x64CD;&amp;#x4F5C;beeline&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x547D;&amp;#x4EE4;&amp;#xFF1A;123456$beeline --hiveconf&amp;#xA0; hive.server2.logging.operation.level&#x3D;NONE$beeline -f &quot;test.sql&quot;$be">
+  <meta name="description" content="Hive常用操作beeline客户端命令：123456$beeline --hiveconf  hive.server2.logging.operation.level&#x3D;NONE$beeline -f &quot;test.sql&quot;$beeline -e  show databases$beeline -n  username -p password -u jdbc:hive2:&#x2F;&#x2F;h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hive基础-由浅入深">
-<meta property="og:url" content="https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
+<meta property="og:url" content="https://ccy-master.github.io/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
 <meta property="og:site_name" content="Bigdata大数据">
-<meta property="og:description" content="Hive&amp;#x5E38;&amp;#x7528;&amp;#x64CD;&amp;#x4F5C;beeline&amp;#x5BA2;&amp;#x6237;&amp;#x7AEF;&amp;#x547D;&amp;#x4EE4;&amp;#xFF1A;123456$beeline --hiveconf&amp;#xA0; hive.server2.logging.operation.level&#x3D;NONE$beeline -f &quot;test.sql&quot;$be">
+<meta property="og:description" content="Hive常用操作beeline客户端命令：123456$beeline --hiveconf  hive.server2.logging.operation.level&#x3D;NONE$beeline -f &quot;test.sql&quot;$beeline -e  show databases$beeline -n  username -p password -u jdbc:hive2:&#x2F;&#x2F;h">
 <meta property="og:locale">
-<meta property="og:image" content="https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg">
+<meta property="og:image" content="https://ccy-master.github.io/clg/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg">
 <meta property="article:published_time" content="2021-11-18T00:30:00.000Z">
 <meta property="article:modified_time" content="2021-12-16T13:16:55.000Z">
-<meta property="article:author" content="MrRobot.C">
+<meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg">
+<meta name="twitter:image" content="https://ccy-master.github.io/clg/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
+  <link rel="canonical" href="https://ccy-master.github.io/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Bigdata大数据" type="application/atom+xml">
   
@@ -40,7 +40,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/ei.github.io/css/style.css">
+<link rel="stylesheet" href="/clg/css/style.css">
 
   
   
@@ -57,7 +57,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://github.com/C-MrRobot" target="_blank">
-          <img class="img-circle img-rotate" src="/ei.github.io/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/clg/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">MrRobot.C</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Bigdata Devops</h3>
@@ -101,7 +101,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/ei.github.io/.">
+          <a href="/clg/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -111,7 +111,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/ei.github.io/archives">
+          <a href="/clg/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -121,7 +121,7 @@
         
         
         <li class="menu-item menu-item-categories">
-          <a href="/ei.github.io/categories">
+          <a href="/clg/categories">
             
             <i class="icon icon-folder"></i>
             
@@ -131,7 +131,7 @@
         
         
         <li class="menu-item menu-item-tags">
-          <a href="/ei.github.io/tags">
+          <a href="/clg/tags">
             
             <i class="icon icon-tags"></i>
             
@@ -141,7 +141,7 @@
         
         
         <li class="menu-item menu-item-repository">
-          <a href="/ei.github.io/repository">
+          <a href="/clg/repository">
             
             <i class="icon icon-project"></i>
             
@@ -151,7 +151,7 @@
         
         
         <li class="menu-item menu-item-books">
-          <a href="/ei.github.io/books">
+          <a href="/clg/books">
             
             <i class="icon icon-book-fill"></i>
             
@@ -161,7 +161,7 @@
         
         
         <li class="menu-item menu-item-links">
-          <a href="/ei.github.io/links">
+          <a href="/clg/links">
             
             <i class="icon icon-friendship"></i>
             
@@ -171,7 +171,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/ei.github.io/about">
+          <a href="/clg/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -188,7 +188,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -224,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -243,7 +243,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
+                <a href="/clg/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
               </p>
               <p class="item-date">
                 <time datetime="2026-01-11T07:54:33.000Z" itemprop="datePublished">2026-01-11</time>
@@ -258,10 +258,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/hello-world/" class="title">Hello World</a>
+                <a href="/clg/2025/03/26/hello-world/" class="title">Hello World</a>
               </p>
               <p class="item-date">
-                <time datetime="2025-03-06T06:44:13.868Z" itemprop="datePublished">2025-03-06</time>
+                <time datetime="2025-03-26T09:33:08.174Z" itemprop="datePublished">2025-03-26</time>
               </p>
             </div>
           </li>
@@ -273,7 +273,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
+                <a href="/clg/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:22:33.000Z" itemprop="datePublished">2025-03-06</time>
@@ -288,7 +288,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
+                <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:15:04.000Z" itemprop="datePublished">2025-03-06</time>
@@ -303,7 +303,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
+                <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-05T06:56:26.000Z" itemprop="datePublished">2025-03-05</time>
@@ -339,7 +339,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="article-date">
+	<a href="/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="article-date">
 	  <time datetime="2021-11-18T00:30:00.000Z" itemprop="datePublished">2021-11-18</time>
 	</a>
 </span>
@@ -348,36 +348,36 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg" alt="0"></p>
-<h2 id="Hive&#x5E38;&#x7528;&#x64CD;&#x4F5C;"><a href="#Hive&#x5E38;&#x7528;&#x64CD;&#x4F5C;" class="headerlink" title="Hive&#x5E38;&#x7528;&#x64CD;&#x4F5C;"></a>Hive&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h2><h3 id="beeline&#x5BA2;&#x6237;&#x7AEF;&#x547D;&#x4EE4;&#xFF1A;"><a href="#beeline&#x5BA2;&#x6237;&#x7AEF;&#x547D;&#x4EE4;&#xFF1A;" class="headerlink" title="beeline&#x5BA2;&#x6237;&#x7AEF;&#x547D;&#x4EE4;&#xFF1A;"></a>beeline&#x5BA2;&#x6237;&#x7AEF;&#x547D;&#x4EE4;&#xFF1A;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$beeline</span> --hiveconf&#xA0; hive.server2.logging.operation.level=NONE</span><br><span class="line"><span class="variable">$beeline</span> -f <span class="string">&quot;test.sql&quot;</span></span><br><span class="line"><span class="variable">$beeline</span> -e&#xA0; show databases</span><br><span class="line"><span class="variable">$beeline</span> -n&#xA0; username -p password -u jdbc:hive2://hs2.<span class="built_in">local</span>:10012</span><br><span class="line"><span class="variable">$beeline</span> -u&#xA0; jdbc:hive2://192.168.0.76:10000 -n <span class="variable">$user</span></span><br><span class="line"><span class="variable">$beeline</span> --hiveconf&#xA0; <span class="string">&apos;hive.server2.tez.initialize.default.sessions=true&apos;</span>&#xA0; <span class="string">&apos;hive.cli.print.header=false&apos;</span> -e <span class="string">&apos;select * from table&apos;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;describe formated&#xA0; table_name;</span><br><span class="line">&gt;show create database <span class="variable">$dbname</span>;</span><br><span class="line">&gt;show create table <span class="variable">$tablename</span>;</span><br><span class="line">&gt;drop&#xA0; database&#xA0; myhive&#xA0; cascade; </span><br><span class="line">&gt;TRUNCATE TABLE&#xA0; Tablename;</span><br><span class="line">&gt;describe database bigdata;</span><br></pre></td></tr></table></figure>
-<h2 id="Hive&#x5E38;&#x7528;&#x8BED;&#x6CD5;"><a href="#Hive&#x5E38;&#x7528;&#x8BED;&#x6CD5;" class="headerlink" title="Hive&#x5E38;&#x7528;&#x8BED;&#x6CD5;"></a>Hive&#x5E38;&#x7528;&#x8BED;&#x6CD5;</h2><h3 id="&#x4FEE;&#x6539;&#x6267;&#x884C;&#x5F15;&#x64CE;"><a href="#&#x4FEE;&#x6539;&#x6267;&#x884C;&#x5F15;&#x64CE;" class="headerlink" title="&#x4FEE;&#x6539;&#x6267;&#x884C;&#x5F15;&#x64CE;:"></a>&#x4FEE;&#x6539;&#x6267;&#x884C;&#x5F15;&#x64CE;:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> hive.execution.engine=spark;</span><br></pre></td></tr></table></figure>
-<h3 id="&#x4FEE;&#x6539;hive-&#x63D0;&#x4EA4;&#x961F;&#x5217;&#xFF1A;"><a href="#&#x4FEE;&#x6539;hive-&#x63D0;&#x4EA4;&#x961F;&#x5217;&#xFF1A;" class="headerlink" title="&#x4FEE;&#x6539;hive &#x63D0;&#x4EA4;&#x961F;&#x5217;&#xFF1A;"></a>&#x4FEE;&#x6539;hive &#x63D0;&#x4EA4;&#x961F;&#x5217;&#xFF1A;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> mapreduce.job.queuename=default</span><br></pre></td></tr></table></figure>
-<h3 id="&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower&#xFF1A;"><a href="#&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower&#xFF1A;" class="headerlink" title="&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower&#xFF1A;"></a>&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower&#xFF1A;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET OWNER user <span class="variable">$username</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="&#x4FEE;&#x6539;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x5316;"><a href="#&#x4FEE;&#x6539;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="&#x4FEE;&#x6539;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x5316;"></a>&#x4FEE;&#x6539;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x5316;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$tablename</span> <span class="built_in">set</span> SERDE <span class="string">&quot;org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe&quot;</span>;&#xA0; (RCFlie)</span><br></pre></td></tr></table></figure>
-<h3 id="&#x4FEE;&#x6539;&#x8868;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF1A;"><a href="#&#x4FEE;&#x6539;&#x8868;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF1A;" class="headerlink" title="&#x4FEE;&#x6539;&#x8868;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF1A;"></a>&#x4FEE;&#x6539;&#x8868;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF1A;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$tablename</span> SET FILEFORMAT</span><br><span class="line">INPUTFORMAT &#x201C;org.apache.hadoop.hive.ql.io.RCFileInputFormat&#x201D;</span><br><span class="line">OUTPUTFORMAT &#x201C;org.apache.hadoop.hive.ql.io.RCFileOutputFormat&#x201D;;</span><br></pre></td></tr></table></figure>
-<h3 id="&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;&#xFF1A;"><a href="#&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;&#xFF1A;" class="headerlink" title="&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;&#xFF1A;"></a>&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;&#xFF1A;</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weijiqian/p/14335772.html">https://www.cnblogs.com/weijiqian/p/14335772.html</a>&#xA0;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span>&#xA0; <span class="built_in">set</span> location <span class="string">&apos;/hive/warehouse/test.db/tb_table2&apos;</span>;</span><br></pre></td></tr></table></figure>
+        <p><img src="/clg/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/Hive.jpg" alt="0"></p>
+<h2 id="Hive常用操作"><a href="#Hive常用操作" class="headerlink" title="Hive常用操作"></a>Hive常用操作</h2><h3 id="beeline客户端命令："><a href="#beeline客户端命令：" class="headerlink" title="beeline客户端命令："></a>beeline客户端命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$beeline</span> --hiveconf  hive.server2.logging.operation.level=NONE</span><br><span class="line"><span class="variable">$beeline</span> -f <span class="string">&quot;test.sql&quot;</span></span><br><span class="line"><span class="variable">$beeline</span> -e  show databases</span><br><span class="line"><span class="variable">$beeline</span> -n  username -p password -u jdbc:hive2://hs2.<span class="built_in">local</span>:10012</span><br><span class="line"><span class="variable">$beeline</span> -u  jdbc:hive2://192.168.0.76:10000 -n <span class="variable">$user</span></span><br><span class="line"><span class="variable">$beeline</span> --hiveconf  <span class="string">&#x27;hive.server2.tez.initialize.default.sessions=true&#x27;</span>  <span class="string">&#x27;hive.cli.print.header=false&#x27;</span> -e <span class="string">&#x27;select * from table&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;describe formated  table_name;</span><br><span class="line">&gt;show create database <span class="variable">$dbname</span>;</span><br><span class="line">&gt;show create table <span class="variable">$tablename</span>;</span><br><span class="line">&gt;drop  database  myhive  cascade; </span><br><span class="line">&gt;TRUNCATE TABLE  Tablename;</span><br><span class="line">&gt;describe database bigdata;</span><br></pre></td></tr></table></figure>
+<h2 id="Hive常用语法"><a href="#Hive常用语法" class="headerlink" title="Hive常用语法"></a>Hive常用语法</h2><h3 id="修改执行引擎"><a href="#修改执行引擎" class="headerlink" title="修改执行引擎:"></a>修改执行引擎:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> hive.execution.engine=spark;</span><br></pre></td></tr></table></figure>
+<h3 id="修改hive-提交队列："><a href="#修改hive-提交队列：" class="headerlink" title="修改hive 提交队列："></a>修改hive 提交队列：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> mapreduce.job.queuename=default</span><br></pre></td></tr></table></figure>
+<h3 id="修改hive表的ower："><a href="#修改hive表的ower：" class="headerlink" title="修改hive表的ower："></a>修改hive表的ower：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET OWNER user <span class="variable">$username</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="修改表的序列化"><a href="#修改表的序列化" class="headerlink" title="修改表的序列化"></a>修改表的序列化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$tablename</span> <span class="built_in">set</span> SERDE <span class="string">&quot;org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe&quot;</span>;  (RCFlie)</span><br></pre></td></tr></table></figure>
+<h3 id="修改表存储格式："><a href="#修改表存储格式：" class="headerlink" title="修改表存储格式："></a>修改表存储格式：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$tablename</span> SET FILEFORMAT</span><br><span class="line">INPUTFORMAT “org.apache.hadoop.hive.ql.io.RCFileInputFormat”</span><br><span class="line">OUTPUTFORMAT “org.apache.hadoop.hive.ql.io.RCFileOutputFormat”;</span><br></pre></td></tr></table></figure>
+<h3 id="修改存储路径："><a href="#修改存储路径：" class="headerlink" title="修改存储路径："></a>修改存储路径：</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weijiqian/p/14335772.html">https://www.cnblogs.com/weijiqian/p/14335772.html</a> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span>  <span class="built_in">set</span> location <span class="string">&#x27;/hive/warehouse/test.db/tb_table2&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="MR&#x5F15;&#x64CE;"><a href="#MR&#x5F15;&#x64CE;" class="headerlink" title="MR&#x5F15;&#x64CE;"></a>MR&#x5F15;&#x64CE;</h3><p>&#xA0; &#xA0; set mapred.min.split.size=1;&#xA0;<br>&#xA0; &#xA0; set mapred.max.split.size=128000000; &#x589E;&#x5927;map task&#x7684;&#x6570;&#x91CF;&#xA0;<br>&#xA0; &#xA0; set mapred.map.tasks=2&#xFF1B; &#x589E;&#x5927;map task&#x7684;&#x6570;&#x91CF; &#xFF0C;&#x65E0;&#x7528;&#xFF01;&#xFF01;<br>&#xA0; &#xA0; set mapred.reduce.tasks=1000; &#x589E;&#x5927;reduce task&#x7684;&#x6570;&#x91CF;<br>&#xA0; &#xA0; mapreduce.map.memory.mb &#x6BCF;&#x4E2A;Map task&#x8BBE;&#x7F6E;map&#x7684;&#x6700;&#x5927;&#x5185;&#x5B58;<br>&#xA0; &#xA0; mapreduce.reduce.memory.mb &#x6BCF;&#x4E2A;Reduce task&#x8BBE;&#x7F6E;reduce&#x7684;&#x6700;&#x5927;&#x5185;&#x5B58;</p>
-<h3 id="TEZ&#x5F15;&#x64CE;"><a href="#TEZ&#x5F15;&#x64CE;" class="headerlink" title="TEZ&#x5F15;&#x64CE;"></a>TEZ&#x5F15;&#x64CE;</h3><p>&#xA0; &#xA0;1.set hive.tez.cpu.vcores=3 &#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;task&#x7684;cpu&#x4F7F;&#x7528;<br>&#xA0; &#xA0;2.&#x5982;&#x679C;tez&#x662F;contain&#x6A21;&#x5F0F;&#xFF0C;&#x5C3D;&#x91CF;&#x8C03;&#x8282;contain&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x56E0;&#x4E3A;contain&#x591A;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x91CC;&#x9762;&#x8FD0;&#x884C;&#x7684;   task&#x4E5F;&#x591A;&#x4E86;&#xFF0C;&#x5E76;&#x884C;&#x5EA6;&#x5C31;&#x4E0A;&#x6765;&#x4E86;</p>
-<h3 id="spark&#x5F15;&#x64CE;"><a href="#spark&#x5F15;&#x64CE;" class="headerlink" title="spark&#x5F15;&#x64CE;"></a>spark&#x5F15;&#x64CE;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> hive.execution.engine=spark;</span><br></pre></td></tr></table></figure>
-<h2 id="Hive&#x5B9E;&#x6218;"><a href="#Hive&#x5B9E;&#x6218;" class="headerlink" title="Hive&#x5B9E;&#x6218;"></a>Hive&#x5B9E;&#x6218;</h2><h3 id="1&#xB7;-&#x521B;&#x5EFA;&#x5185;&#x8868;"><a href="#1&#xB7;-&#x521B;&#x5EFA;&#x5185;&#x8868;" class="headerlink" title="1&#xB7; &#x521B;&#x5EFA;&#x5185;&#x8868;"></a>1&#xB7; &#x521B;&#x5EFA;&#x5185;&#x8868;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;create table bigdata.eimrs(<span class="built_in">id</span> string,name string,worker string,happies string,age int);</span><br><span class="line">&gt;insert into table bigdata.eimrs values(<span class="string">&quot;0&quot;</span>,<span class="string">&quot;&#x5F20;&#x4E09;&quot;</span>,<span class="string">&quot;&#x7A0B;&#x5E8F;&#x5458;&quot;</span>,<span class="string">&quot;&#x8E22;&#x8DB3;&#x7403;&quot;</span>,30);</span><br><span class="line">&gt;insert into table bigdata.eimrs values(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;&#x674E;&#x56DB;&quot;</span>,<span class="string">&quot;&#x827A;&#x672F;&#x5BB6;&quot;</span>,<span class="string">&quot;&#x6253;&#x7BEE;&#x7403;&quot;</span>,28);</span><br><span class="line">&gt;insert into table bigdata.eimrs&#xA0; values(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;&#x738B;&#x4E94;&quot;</span>,<span class="string">&quot;&#x7A0B;&#x5E8F;&#x5458;&quot;</span>,<span class="string">&quot;&#x4E52;&#x4E53;&#x7403;&quot;</span>,32);</span><br><span class="line">&gt;insert into table bigdata.eimrs&#xA0; values(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;&#x6210;&#x54E5;&quot;</span>,<span class="string">&quot;&#x7A0B;&#x5E8F;&#x5458;&quot;</span>,<span class="string">&quot;&#x94C5;&#x7403;&quot;</span>,32);</span><br></pre></td></tr></table></figure>
-<h3 id="2&#xB7;-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;"><a href="#2&#xB7;-&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;" class="headerlink" title="2&#xB7; &#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;"></a>2&#xB7; &#x521B;&#x5EFA;&#x5916;&#x90E8;&#x8868;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;create external table student (s_id string,s_name string) row format delimited fields terminated by <span class="string">&apos;\t&apos;</span>;</span><br><span class="line">&gt;create external table bigdata.eimrs0(<span class="built_in">id</span> string comment <span class="string">&quot;id&quot;</span>,name string comment <span class="string">&quot;&#x540D;&#x79F0;&quot;</span>,teacher string comment <span class="string">&quot;&#x6388;&#x8BFE;&#x8001;&#x5E08;&#x4FE1;&#x606F;&quot;</span>)</span><br><span class="line">comment <span class="string">&quot;&#x6D4B;&#x8BD5;JSON&#x683C;&#x5F0F;&#x5916;&#x90E8;&#x8868;&quot;</span></span><br><span class="line">row format serde <span class="string">&apos;org.apache.hive.hcatalog.data.JsonSerDe&apos;</span></span><br><span class="line">stored as textfile;</span><br></pre></td></tr></table></figure>
-<h3 id="3&#xB7;-&#x521B;&#x5EFA;&#x5206;&#x533A;&#x8868;"><a href="#3&#xB7;-&#x521B;&#x5EFA;&#x5206;&#x533A;&#x8868;" class="headerlink" title="3&#xB7; &#x521B;&#x5EFA;&#x5206;&#x533A;&#x8868;"></a>3&#xB7; &#x521B;&#x5EFA;&#x5206;&#x533A;&#x8868;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;create table score2 (s_id string, s_score int) partitioned by (year string,month string,day string);</span><br><span class="line">&gt;insert into table score2 partition(year=<span class="string">&apos;2021&apos;</span>,month=<span class="string">&apos;01&apos;</span>,day=<span class="string">&apos;01&apos;</span>) values(<span class="string">&quot;1&quot;</span>,20);</span><br></pre></td></tr></table></figure>
-<h3 id="4&#xB7;-&#x521B;&#x5EFA;&#x8868;&#x6307;&#x5B9A;obs-&#x8DEF;&#x5F84;-&#x4EE5;&#x534E;&#x4E3A;&#x4E91;&#x4E3A;&#x4F8B;-&#x963F;&#x91CC;&#x4E91;&#x7C7B;&#x4F3C;"><a href="#4&#xB7;-&#x521B;&#x5EFA;&#x8868;&#x6307;&#x5B9A;obs-&#x8DEF;&#x5F84;-&#x4EE5;&#x534E;&#x4E3A;&#x4E91;&#x4E3A;&#x4F8B;-&#x963F;&#x91CC;&#x4E91;&#x7C7B;&#x4F3C;" class="headerlink" title="4&#xB7; &#x521B;&#x5EFA;&#x8868;&#x6307;&#x5B9A;obs &#x8DEF;&#x5F84; &#x4EE5;&#x534E;&#x4E3A;&#x4E91;&#x4E3A;&#x4F8B;  &#x963F;&#x91CC;&#x4E91;&#x7C7B;&#x4F3C;"></a>4&#xB7; &#x521B;&#x5EFA;&#x8868;&#x6307;&#x5B9A;obs &#x8DEF;&#x5F84; &#x4EE5;&#x534E;&#x4E3A;&#x4E91;&#x4E3A;&#x4F8B;  &#x963F;&#x91CC;&#x4E91;&#x7C7B;&#x4F3C;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;create database <span class="keyword">if</span> not exists <span class="variable">$database_name</span>&#xA0; location&#xA0; <span class="string">&quot;obs://&#x6876;/&#x76EE;&#x5F55;/&quot;</span>;</span><br><span class="line">&gt;create table <span class="built_in">test</span>(name string) location <span class="string">&quot;obs://&#x6876;/user/hive/warehouse/test&quot;</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="5-load&#x672C;&#x5730;&#x6570;&#x636E;"><a href="#5-load&#x672C;&#x5730;&#x6570;&#x636E;" class="headerlink" title="5. load&#x672C;&#x5730;&#x6570;&#x636E;"></a>5. load&#x672C;&#x5730;&#x6570;&#x636E;</h3><p>&#x8FFD;&#x52A0;&#x64CD;&#x4F5C;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;load data <span class="built_in">local</span> inpath <span class="string">&apos;/export/servers/hivedatas/student.csv&apos;</span> into table student;</span><br><span class="line"></span><br><span class="line">&gt;load data <span class="built_in">local</span> inpath <span class="string">&apos;/export/servers/hivedatas/student.csv&apos;</span> overwrite&#xA0; into table student;</span><br></pre></td></tr></table></figure>
-<h3 id="6-loadHDFS&#x6570;&#x636E;"><a href="#6-loadHDFS&#x6570;&#x636E;" class="headerlink" title="6. loadHDFS&#x6570;&#x636E;"></a>6. loadHDFS&#x6570;&#x636E;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;load data inpath <span class="string">&apos;/hivedatas/techer.csv&apos;</span> into table techer;</span><br><span class="line">&gt;load data inpath <span class="string">&apos;/hivedatas/techer.csv&apos;</span> into table techer partition(cur_date=20201210);&#xA0; &#xFF08;load&#x5230;&#x6307;&#x5B9A;&#x5206;&#x533A;&#xFF09;</span><br></pre></td></tr></table></figure>
-<h3 id="7-&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower"><a href="#7-&#x4FEE;&#x6539;hive&#x8868;&#x7684;ower" class="headerlink" title="7. &#x4FEE;&#x6539;hive&#x8868;&#x7684;ower"></a>7. &#x4FEE;&#x6539;hive&#x8868;&#x7684;ower</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET OWNER user <span class="variable">$username</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="8-&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;"><a href="#8-&#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;" class="headerlink" title="8. &#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;"></a>8. &#x4FEE;&#x6539;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weijiqian/p/14335772.html">https://www.cnblogs.com/weijiqian/p/14335772.html</a>&#xA0;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET location <span class="string">&apos;/hive/warehouse/test.db/tb_table2&apos;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="MR引擎"><a href="#MR引擎" class="headerlink" title="MR引擎"></a>MR引擎</h3><p>    set mapred.min.split.size&#x3D;1; <br>    set mapred.max.split.size&#x3D;128000000; 增大map task的数量 <br>    set mapred.map.tasks&#x3D;2； 增大map task的数量 ，无用！！<br>    set mapred.reduce.tasks&#x3D;1000; 增大reduce task的数量<br>    mapreduce.map.memory.mb 每个Map task设置map的最大内存<br>    mapreduce.reduce.memory.mb 每个Reduce task设置reduce的最大内存</p>
+<h3 id="TEZ引擎"><a href="#TEZ引擎" class="headerlink" title="TEZ引擎"></a>TEZ引擎</h3><p>   1.set hive.tez.cpu.vcores&#x3D;3 设置每个task的cpu使用<br>   2.如果tez是contain模式，尽量调节contain的数量，因为contain多了，那么里面运行的   task也多了，并行度就上来了</p>
+<h3 id="spark引擎"><a href="#spark引擎" class="headerlink" title="spark引擎"></a>spark引擎</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">set</span> hive.execution.engine=spark;</span><br></pre></td></tr></table></figure>
+<h2 id="Hive实战"><a href="#Hive实战" class="headerlink" title="Hive实战"></a>Hive实战</h2><h3 id="1·-创建内表"><a href="#1·-创建内表" class="headerlink" title="1· 创建内表"></a>1· 创建内表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;create table bigdata.eimrs(<span class="built_in">id</span> string,name string,worker string,happies string,age int);</span><br><span class="line">&gt;insert into table bigdata.eimrs values(<span class="string">&quot;0&quot;</span>,<span class="string">&quot;张三&quot;</span>,<span class="string">&quot;程序员&quot;</span>,<span class="string">&quot;踢足球&quot;</span>,30);</span><br><span class="line">&gt;insert into table bigdata.eimrs values(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;李四&quot;</span>,<span class="string">&quot;艺术家&quot;</span>,<span class="string">&quot;打篮球&quot;</span>,28);</span><br><span class="line">&gt;insert into table bigdata.eimrs  values(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;王五&quot;</span>,<span class="string">&quot;程序员&quot;</span>,<span class="string">&quot;乒乓球&quot;</span>,32);</span><br><span class="line">&gt;insert into table bigdata.eimrs  values(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;成哥&quot;</span>,<span class="string">&quot;程序员&quot;</span>,<span class="string">&quot;铅球&quot;</span>,32);</span><br></pre></td></tr></table></figure>
+<h3 id="2·-创建外部表"><a href="#2·-创建外部表" class="headerlink" title="2· 创建外部表"></a>2· 创建外部表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;create external table student (s_id string,s_name string) row format delimited fields terminated by <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">&gt;create external table bigdata.eimrs0(<span class="built_in">id</span> string comment <span class="string">&quot;id&quot;</span>,name string comment <span class="string">&quot;名称&quot;</span>,teacher string comment <span class="string">&quot;授课老师信息&quot;</span>)</span><br><span class="line">comment <span class="string">&quot;测试JSON格式外部表&quot;</span></span><br><span class="line">row format serde <span class="string">&#x27;org.apache.hive.hcatalog.data.JsonSerDe&#x27;</span></span><br><span class="line">stored as textfile;</span><br></pre></td></tr></table></figure>
+<h3 id="3·-创建分区表"><a href="#3·-创建分区表" class="headerlink" title="3· 创建分区表"></a>3· 创建分区表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;create table score2 (s_id string, s_score int) partitioned by (year string,month string,day string);</span><br><span class="line">&gt;insert into table score2 partition(year=<span class="string">&#x27;2021&#x27;</span>,month=<span class="string">&#x27;01&#x27;</span>,day=<span class="string">&#x27;01&#x27;</span>) values(<span class="string">&quot;1&quot;</span>,20);</span><br></pre></td></tr></table></figure>
+<h3 id="4·-创建表指定obs-路径-以华为云为例-阿里云类似"><a href="#4·-创建表指定obs-路径-以华为云为例-阿里云类似" class="headerlink" title="4· 创建表指定obs 路径 以华为云为例  阿里云类似"></a>4· 创建表指定obs 路径 以华为云为例  阿里云类似</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;create database <span class="keyword">if</span> not exists <span class="variable">$database_name</span>  location  <span class="string">&quot;obs://桶/目录/&quot;</span>;</span><br><span class="line">&gt;create table <span class="built_in">test</span>(name string) location <span class="string">&quot;obs://桶/user/hive/warehouse/test&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="5-load本地数据"><a href="#5-load本地数据" class="headerlink" title="5. load本地数据"></a>5. load本地数据</h3><p>追加操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;load data <span class="built_in">local</span> inpath <span class="string">&#x27;/export/servers/hivedatas/student.csv&#x27;</span> into table student;</span><br><span class="line"></span><br><span class="line">&gt;load data <span class="built_in">local</span> inpath <span class="string">&#x27;/export/servers/hivedatas/student.csv&#x27;</span> overwrite  into table student;</span><br></pre></td></tr></table></figure>
+<h3 id="6-loadHDFS数据"><a href="#6-loadHDFS数据" class="headerlink" title="6. loadHDFS数据"></a>6. loadHDFS数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;load data inpath <span class="string">&#x27;/hivedatas/techer.csv&#x27;</span> into table techer;</span><br><span class="line">&gt;load data inpath <span class="string">&#x27;/hivedatas/techer.csv&#x27;</span> into table techer partition(cur_date=20201210);  （load到指定分区）</span><br></pre></td></tr></table></figure>
+<h3 id="7-修改hive表的ower"><a href="#7-修改hive表的ower" class="headerlink" title="7. 修改hive表的ower"></a>7. 修改hive表的ower</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET OWNER user <span class="variable">$username</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="8-修改存储路径"><a href="#8-修改存储路径" class="headerlink" title="8. 修改存储路径"></a>8. 修改存储路径</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weijiqian/p/14335772.html">https://www.cnblogs.com/weijiqian/p/14335772.html</a> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;ALTER TABLE <span class="variable">$table_name</span> SET location <span class="string">&#x27;/hive/warehouse/test.db/tb_table2&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -389,7 +389,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hive基础-由浅入深" target="_blank" rel="external">https://c-mrrobot.github.io/ei.github.io/2021/11/18/Hive基础-由浅入深/</a>
+      <a href="https://ccy-master.github.io/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hive基础-由浅入深" target="_blank" rel="external">https://ccy-master.github.io/clg/2021/11/18/Hive基础-由浅入深/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -404,7 +404,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/C-MrRobot" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/ei.github.io/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/clg/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -436,7 +436,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/ei.github.io/2021/11/20/Hexo%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub-Pages%E6%8C%87%E5%AF%BC/" title="Hexo部署在GitHub-Pages指导"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/clg/2021/11/20/Hexo%E9%83%A8%E7%BD%B2%E5%9C%A8GitHub-Pages%E6%8C%87%E5%AF%BC/" title="Hexo部署在GitHub-Pages指导"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
@@ -472,14 +472,14 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
@@ -514,7 +514,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -530,10 +530,10 @@
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/ei.github.io/js/plugin.min.js"></script>
+<script src="/clg/js/plugin.min.js"></script>
 
 
-<script src="/ei.github.io/js/application.js"></script>
+<script src="/clg/js/application.js"></script>
 
 
     <script>
@@ -546,14 +546,14 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/ei.github.io/',
-        CONTENT_URL: '/ei.github.io/content.json',
+        ROOT_URL: '/clg/',
+        CONTENT_URL: '/clg/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/ei.github.io/js/insight.js"></script>
+<script src="/clg/js/insight.js"></script>
 
 
 

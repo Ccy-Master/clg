@@ -18,19 +18,19 @@
   
   
   <title>Flink基础 | Bigdata</title>
-  <meta name="description" content="Flink&amp;#x7406;&amp;#x8BBA;&amp;#x4ECB;&amp;#x7ECD;Flink&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x6279;&amp;#x5904;&amp;#x7406;&amp;#x548C;&amp;#x6D41;&amp;#x5904;&amp;#x7406;&amp;#x7ED3;&amp;#x5408;&amp;#x7684;&amp;#x7EDF;&amp;#x4E00;&amp;#x8BA1;&amp;#x7B97;&amp;#x6846;&amp;#x67B6;&amp;#xFF0">
+  <meta name="description" content="Flink理论介绍Flink是一个批处理和流处理结合的统一计算框架，其核心是一个提供了数据分发以及并行化计算的流数据处理引擎。它的最大亮点是流处理，是业界最顶级的开源流处理引擎。Flink最适合的应用场景是低时延的数据处理（Data Processing）场景：高并发pipeline处理数据，时延毫秒级，且兼具可靠性。 Flink整个系统包含三个部分：ClientFlink Client主要给用户">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flink基础">
-<meta property="og:url" content="https://c-mrrobot.github.io/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://ccy-master.github.io/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Bigdata大数据">
-<meta property="og:description" content="Flink&amp;#x7406;&amp;#x8BBA;&amp;#x4ECB;&amp;#x7ECD;Flink&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x6279;&amp;#x5904;&amp;#x7406;&amp;#x548C;&amp;#x6D41;&amp;#x5904;&amp;#x7406;&amp;#x7ED3;&amp;#x5408;&amp;#x7684;&amp;#x7EDF;&amp;#x4E00;&amp;#x8BA1;&amp;#x7B97;&amp;#x6846;&amp;#x67B6;&amp;#xFF0">
+<meta property="og:description" content="Flink理论介绍Flink是一个批处理和流处理结合的统一计算框架，其核心是一个提供了数据分发以及并行化计算的流数据处理引擎。它的最大亮点是流处理，是业界最顶级的开源流处理引擎。Flink最适合的应用场景是低时延的数据处理（Data Processing）场景：高并发pipeline处理数据，时延毫秒级，且兼具可靠性。 Flink整个系统包含三个部分：ClientFlink Client主要给用户">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-03-05T06:56:26.000Z">
 <meta property="article:modified_time" content="2025-03-06T03:42:36.421Z">
-<meta property="article:author" content="MrRobot.C">
+<meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://c-mrrobot.github.io/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="https://ccy-master.github.io/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Bigdata大数据" type="application/atom+xml">
   
@@ -38,7 +38,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/ei.github.io/css/style.css">
+<link rel="stylesheet" href="/clg/css/style.css">
 
   
   
@@ -55,7 +55,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://github.com/C-MrRobot" target="_blank">
-          <img class="img-circle img-rotate" src="/ei.github.io/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/clg/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">MrRobot.C</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Bigdata Devops</h3>
@@ -99,7 +99,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/ei.github.io/.">
+          <a href="/clg/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -109,7 +109,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/ei.github.io/archives">
+          <a href="/clg/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -119,7 +119,7 @@
         
         
         <li class="menu-item menu-item-categories">
-          <a href="/ei.github.io/categories">
+          <a href="/clg/categories">
             
             <i class="icon icon-folder"></i>
             
@@ -129,7 +129,7 @@
         
         
         <li class="menu-item menu-item-tags">
-          <a href="/ei.github.io/tags">
+          <a href="/clg/tags">
             
             <i class="icon icon-tags"></i>
             
@@ -139,7 +139,7 @@
         
         
         <li class="menu-item menu-item-repository">
-          <a href="/ei.github.io/repository">
+          <a href="/clg/repository">
             
             <i class="icon icon-project"></i>
             
@@ -149,7 +149,7 @@
         
         
         <li class="menu-item menu-item-books">
-          <a href="/ei.github.io/books">
+          <a href="/clg/books">
             
             <i class="icon icon-book-fill"></i>
             
@@ -159,7 +159,7 @@
         
         
         <li class="menu-item menu-item-links">
-          <a href="/ei.github.io/links">
+          <a href="/clg/links">
             
             <i class="icon icon-friendship"></i>
             
@@ -169,7 +169,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/ei.github.io/about">
+          <a href="/clg/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -186,7 +186,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +241,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
+                <a href="/clg/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
               </p>
               <p class="item-date">
                 <time datetime="2026-01-11T07:54:33.000Z" itemprop="datePublished">2026-01-11</time>
@@ -256,10 +256,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/hello-world/" class="title">Hello World</a>
+                <a href="/clg/2025/03/26/hello-world/" class="title">Hello World</a>
               </p>
               <p class="item-date">
-                <time datetime="2025-03-06T06:44:13.868Z" itemprop="datePublished">2025-03-06</time>
+                <time datetime="2025-03-26T09:33:08.174Z" itemprop="datePublished">2025-03-26</time>
               </p>
             </div>
           </li>
@@ -271,7 +271,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
+                <a href="/clg/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:22:33.000Z" itemprop="datePublished">2025-03-06</time>
@@ -286,7 +286,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
+                <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:15:04.000Z" itemprop="datePublished">2025-03-06</time>
@@ -301,7 +301,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
+                <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-05T06:56:26.000Z" itemprop="datePublished">2025-03-05</time>
@@ -337,7 +337,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="article-date">
+	<a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="article-date">
 	  <time datetime="2025-03-05T06:56:26.000Z" itemprop="datePublished">2025-03-05</time>
 	</a>
 </span>
@@ -346,25 +346,25 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="Flink&#x7406;&#x8BBA;&#x4ECB;&#x7ECD;"><a href="#Flink&#x7406;&#x8BBA;&#x4ECB;&#x7ECD;" class="headerlink" title="Flink&#x7406;&#x8BBA;&#x4ECB;&#x7ECD;"></a>Flink&#x7406;&#x8BBA;&#x4ECB;&#x7ECD;</h2><p>Flink&#x662F;&#x4E00;&#x4E2A;&#x6279;&#x5904;&#x7406;&#x548C;&#x6D41;&#x5904;&#x7406;&#x7ED3;&#x5408;&#x7684;&#x7EDF;&#x4E00;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x662F;&#x4E00;&#x4E2A;&#x63D0;&#x4F9B;&#x4E86;&#x6570;&#x636E;&#x5206;&#x53D1;&#x4EE5;&#x53CA;&#x5E76;&#x884C;&#x5316;&#x8BA1;&#x7B97;&#x7684;&#x6D41;&#x6570;&#x636E;&#x5904;&#x7406;&#x5F15;&#x64CE;&#x3002;&#x5B83;&#x7684;&#x6700;&#x5927;&#x4EAE;&#x70B9;&#x662F;&#x6D41;&#x5904;&#x7406;&#xFF0C;&#x662F;&#x4E1A;&#x754C;&#x6700;&#x9876;&#x7EA7;&#x7684;&#x5F00;&#x6E90;&#x6D41;&#x5904;&#x7406;&#x5F15;&#x64CE;&#x3002;<br>Flink&#x6700;&#x9002;&#x5408;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x662F;&#x4F4E;&#x65F6;&#x5EF6;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#xFF08;Data Processing&#xFF09;&#x573A;&#x666F;&#xFF1A;&#x9AD8;&#x5E76;&#x53D1;pipeline&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x65F6;&#x5EF6;&#x6BEB;&#x79D2;&#x7EA7;&#xFF0C;&#x4E14;&#x517C;&#x5177;&#x53EF;&#x9760;&#x6027;&#x3002;</p>
-<p>Flink&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;<br>Client<br>Flink Client&#x4E3B;&#x8981;&#x7ED9;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x5411;Flink&#x7CFB;&#x7EDF;&#x63D0;&#x4EA4;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#xFF08;&#x6D41;&#x5F0F;&#x4F5C;&#x4E1A;&#xFF09;&#x7684;&#x80FD;&#x529B;&#x3002;<br>TaskManager<br>Flink&#x7CFB;&#x7EDF;&#x7684;&#x4E1A;&#x52A1;&#x6267;&#x884C;&#x8282;&#x70B9;&#xFF0C;&#x6267;&#x884C;&#x5177;&#x4F53;&#x7684;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x3002;TaskManager&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x5404;&#x4E2A;TaskManager&#x90FD;&#x5E73;&#x7B49;&#x3002;<br>JobManager<br>Flink&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#x8282;&#x70B9;&#xFF0C;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x7684;TaskManager&#xFF0C;&#x5E76;&#x51B3;&#x7B56;&#x7528;&#x6237;&#x4EFB;&#x52A1;&#x5728;&#x54EA;&#x4E9B;TaskManager&#x6267;&#x884C;&#x3002;JobManager&#x5728;HA&#x6A21;&#x5F0F;&#x4E0B;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x4F46;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;JobManager&#x3002;</p>
-<h3 id="Flink&#x4F7F;&#x7528;"><a href="#Flink&#x4F7F;&#x7528;" class="headerlink" title="Flink&#x4F7F;&#x7528;"></a>Flink&#x4F7F;&#x7528;</h3><p>Pro-Job&#x6A21;&#x5F0F;<br>sql-client.sh embedded<br>set execution.target = yarn-per-job;<br>       set  execution.result-mode=tableau;</p>
-<p>yarn-session &#x6A21;&#x5F0F;<br>yarn-session.sh -t ssl/ -nm &#x201C;flink-hudi&#x201D; -d  &#x6216;&#x8005;<br>yarn-session.sh -nm &#x201C;flink-hudi&#x201D; -d</p>
-<p>sql-client.sh embedded<br>set high-availability.cluster-id=application_1703741461558_0011;<br>       set execution.result-mode=tableau;</p>
-<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) PARTITIONED BY (<code>p</code>) WITH (<br>&#x2018;connector&#x2019; = &#x2018;hudi&#x2019;,<br>&#x2018;path&#x2019; = &#x2018;obs://dayu-ei-clg/Bigdata/hudi&#x2019;,<br>&#x2018;table.type&#x2019; = &#x2018;MERGE_ON_READ&#x2019;,<br>&#x2018;checkpoint.interval&#x2019; = &#x2018;10000&#x2019;,<br>&#x2018;checkpoint.mode&#x2019; = &#x2018;exactly-once&#x2019;,<br>&#x2018;checkpoint.timeout&#x2019; = &#x2018;60000&#x2019;<br>);</p>
-<p>insert into  hudi_test values(&#x2018;1000&#x2019;,&#x2019;zhangsan&#x2019;,20,30,&#x2019;2023-12-28&#x2019;);</p>
-<p>insert into hudi_test partition(p=&#x201D;20221020&#x201D;) values(&#x2018;1000&#x2019;,&#x2019;zhangsan&#x2019;,20,30);</p>
-<p>insert into  hudi_read_spark_mor values(&#x2018;1000&#x2019;,&#x2019;zhangsan&#x2019;,20,30,&#x2019;2023-12-28&#x2019;);</p>
-<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) WITH (<br>&#x2018;connector&#x2019; = &#x2018;hudi&#x2019;,<br>&#x2018;path&#x2019; = &#x2018;obs://dayu-ei-clg/Bigdata/hudi100&#x2019;,<br>&#x2018;table.type&#x2019; = &#x2018;MERGE_ON_READ&#x2019;<br>);</p>
-<p>insert into  hudi_test values(&#x2018;1000&#x2019;,&#x2019;zhangsan&#x2019;,20,30,&#x2019;2023-12-28&#x2019;);</p>
-<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) PARTITIONED BY (<code>p</code>) WITH (<br>&#x2018;connector&#x2019; = &#x2018;hudi&#x2019;,<br>&#x2018;path&#x2019; = &#x2018;obs://dayu-ei-clg/Bigdata/hudix&#x2019;,<br>&#x2018;table.type&#x2019; = &#x2018;MERGE_ON_READ&#x2019;<br>);</p>
-<p>insert into hudi_test partition(p=&#x2019;2023-12-28&#x2019;) values(&#x2018;1000&#x2019;,&#x2019;zhangsan&#x2019;,30,60);</p>
+        <h2 id="Flink理论介绍"><a href="#Flink理论介绍" class="headerlink" title="Flink理论介绍"></a>Flink理论介绍</h2><p>Flink是一个批处理和流处理结合的统一计算框架，其核心是一个提供了数据分发以及并行化计算的流数据处理引擎。它的最大亮点是流处理，是业界最顶级的开源流处理引擎。<br>Flink最适合的应用场景是低时延的数据处理（Data Processing）场景：高并发pipeline处理数据，时延毫秒级，且兼具可靠性。</p>
+<p>Flink整个系统包含三个部分：<br>Client<br>Flink Client主要给用户提供向Flink系统提交用户任务（流式作业）的能力。<br>TaskManager<br>Flink系统的业务执行节点，执行具体的用户任务。TaskManager可以有多个，各个TaskManager都平等。<br>JobManager<br>Flink系统的管理节点，管理所有的TaskManager，并决策用户任务在哪些TaskManager执行。JobManager在HA模式下可以有多个，但只有一个主JobManager。</p>
+<h3 id="Flink使用"><a href="#Flink使用" class="headerlink" title="Flink使用"></a>Flink使用</h3><p>Pro-Job模式<br>sql-client.sh embedded<br>set execution.target &#x3D; yarn-per-job;<br>       set  execution.result-mode&#x3D;tableau;</p>
+<p>yarn-session 模式<br>yarn-session.sh -t ssl&#x2F; -nm “flink-hudi” -d  或者<br>yarn-session.sh -nm “flink-hudi” -d</p>
+<p>sql-client.sh embedded<br>set high-availability.cluster-id&#x3D;application_1703741461558_0011;<br>       set execution.result-mode&#x3D;tableau;</p>
+<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) PARTITIONED BY (<code>p</code>) WITH (<br>‘connector’ &#x3D; ‘hudi’,<br>‘path’ &#x3D; ‘obs:&#x2F;&#x2F;dayu-ei-clg&#x2F;Bigdata&#x2F;hudi’,<br>‘table.type’ &#x3D; ‘MERGE_ON_READ’,<br>‘checkpoint.interval’ &#x3D; ‘10000’,<br>‘checkpoint.mode’ &#x3D; ‘exactly-once’,<br>‘checkpoint.timeout’ &#x3D; ‘60000’<br>);</p>
+<p>insert into  hudi_test values(‘1000’,’zhangsan’,20,30,’2023-12-28’);</p>
+<p>insert into hudi_test partition(p&#x3D;”20221020”) values(‘1000’,’zhangsan’,20,30);</p>
+<p>insert into  hudi_read_spark_mor values(‘1000’,’zhangsan’,20,30,’2023-12-28’);</p>
+<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) WITH (<br>‘connector’ &#x3D; ‘hudi’,<br>‘path’ &#x3D; ‘obs:&#x2F;&#x2F;dayu-ei-clg&#x2F;Bigdata&#x2F;hudi100’,<br>‘table.type’ &#x3D; ‘MERGE_ON_READ’<br>);</p>
+<p>insert into  hudi_test values(‘1000’,’zhangsan’,20,30,’2023-12-28’);</p>
+<p>CREATE TABLE hudi_test(<br>uuid VARCHAR(20),<br>name VARCHAR(10),<br>age INT,<br>ts INT,<br><code>p</code> VARCHAR(20)<br>) PARTITIONED BY (<code>p</code>) WITH (<br>‘connector’ &#x3D; ‘hudi’,<br>‘path’ &#x3D; ‘obs:&#x2F;&#x2F;dayu-ei-clg&#x2F;Bigdata&#x2F;hudix’,<br>‘table.type’ &#x3D; ‘MERGE_ON_READ’<br>);</p>
+<p>insert into hudi_test partition(p&#x3D;’2023-12-28’) values(‘1000’,’zhangsan’,30,60);</p>
 
       
     </div>
@@ -374,7 +374,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://c-mrrobot.github.io/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" title="Flink基础" target="_blank" rel="external">https://c-mrrobot.github.io/ei.github.io/2025/03/05/Flink基础/</a>
+      <a href="https://ccy-master.github.io/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" title="Flink基础" target="_blank" rel="external">https://ccy-master.github.io/clg/2025/03/05/Flink基础/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -389,7 +389,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/C-MrRobot" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/ei.github.io/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/clg/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -421,12 +421,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" title="Yarn基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" title="Yarn基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/ei.github.io/2021/12/11/Spark%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Spark由浅入深"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/clg/2021/12/11/Spark%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Spark由浅入深"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -461,14 +461,14 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
@@ -503,7 +503,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -519,10 +519,10 @@
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/ei.github.io/js/plugin.min.js"></script>
+<script src="/clg/js/plugin.min.js"></script>
 
 
-<script src="/ei.github.io/js/application.js"></script>
+<script src="/clg/js/application.js"></script>
 
 
     <script>
@@ -535,14 +535,14 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/ei.github.io/',
-        CONTENT_URL: '/ei.github.io/content.json',
+        ROOT_URL: '/clg/',
+        CONTENT_URL: '/clg/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/ei.github.io/js/insight.js"></script>
+<script src="/clg/js/insight.js"></script>
 
 
 

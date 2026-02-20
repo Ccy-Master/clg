@@ -18,22 +18,22 @@
   
   
   <title>Hadoop基础-由浅入深 | Bigdata</title>
-  <meta name="description" content="hadoop&amp;#x4ECB;&amp;#x7ECD; HDFS&amp;#x8BE6;&amp;#x89E3; HDFS&amp;#x4E22;&amp;#x5757;&amp;#x4E22;&amp;#x526F;&amp;#x672C;&amp;#x4FEE;&amp;#x590D;&amp;#xFF1A;hdfs fsck &#x2F;hdfs debug recoverLease -path &amp;#x6587;&amp;#x4EF6; -retries 3   #&amp;#x91CA;&amp;#x653E;">
+  <meta name="description" content="hadoop介绍 HDFS详解 HDFS丢块丢副本修复：hdfs fsck &#x2F;hdfs debug recoverLease -path 文件 -retries 3   #释放租约查看block 块信息：hdfs fsck -blockId blk_1672302277查看机架：hdfs dfsadmin -printTopology修改hdfs 数据副本数 如副本数为2：hdfs df">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop基础-由浅入深">
-<meta property="og:url" content="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
+<meta property="og:url" content="https://ccy-master.github.io/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
 <meta property="og:site_name" content="Bigdata大数据">
-<meta property="og:description" content="hadoop&amp;#x4ECB;&amp;#x7ECD; HDFS&amp;#x8BE6;&amp;#x89E3; HDFS&amp;#x4E22;&amp;#x5757;&amp;#x4E22;&amp;#x526F;&amp;#x672C;&amp;#x4FEE;&amp;#x590D;&amp;#xFF1A;hdfs fsck &#x2F;hdfs debug recoverLease -path &amp;#x6587;&amp;#x4EF6; -retries 3   #&amp;#x91CA;&amp;#x653E;">
+<meta property="og:description" content="hadoop介绍 HDFS详解 HDFS丢块丢副本修复：hdfs fsck &#x2F;hdfs debug recoverLease -path 文件 -retries 3   #释放租约查看block 块信息：hdfs fsck -blockId blk_1672302277查看机架：hdfs dfsadmin -printTopology修改hdfs 数据副本数 如副本数为2：hdfs df">
 <meta property="og:locale">
-<meta property="og:image" content="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif">
-<meta property="og:image" content="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.jpg">
+<meta property="og:image" content="https://ccy-master.github.io/clg/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif">
+<meta property="og:image" content="https://ccy-master.github.io/clg/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.jpg">
 <meta property="article:published_time" content="2021-12-06T04:59:12.000Z">
 <meta property="article:modified_time" content="2025-03-06T03:27:50.418Z">
-<meta property="article:author" content="MrRobot.C">
+<meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif">
+<meta name="twitter:image" content="https://ccy-master.github.io/clg/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
+  <link rel="canonical" href="https://ccy-master.github.io/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Bigdata大数据" type="application/atom+xml">
   
@@ -41,7 +41,7 @@
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
   
-<link rel="stylesheet" href="/ei.github.io/css/style.css">
+<link rel="stylesheet" href="/clg/css/style.css">
 
   
   
@@ -58,7 +58,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://github.com/C-MrRobot" target="_blank">
-          <img class="img-circle img-rotate" src="/ei.github.io/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/clg/images/avatar.jpg" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">MrRobot.C</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Bigdata Devops</h3>
@@ -102,7 +102,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/ei.github.io/.">
+          <a href="/clg/.">
             
             <i class="icon icon-home-fill"></i>
             
@@ -112,7 +112,7 @@
         
         
         <li class="menu-item menu-item-archives">
-          <a href="/ei.github.io/archives">
+          <a href="/clg/archives">
             
             <i class="icon icon-archives-fill"></i>
             
@@ -122,7 +122,7 @@
         
         
         <li class="menu-item menu-item-categories">
-          <a href="/ei.github.io/categories">
+          <a href="/clg/categories">
             
             <i class="icon icon-folder"></i>
             
@@ -132,7 +132,7 @@
         
         
         <li class="menu-item menu-item-tags">
-          <a href="/ei.github.io/tags">
+          <a href="/clg/tags">
             
             <i class="icon icon-tags"></i>
             
@@ -142,7 +142,7 @@
         
         
         <li class="menu-item menu-item-repository">
-          <a href="/ei.github.io/repository">
+          <a href="/clg/repository">
             
             <i class="icon icon-project"></i>
             
@@ -152,7 +152,7 @@
         
         
         <li class="menu-item menu-item-books">
-          <a href="/ei.github.io/books">
+          <a href="/clg/books">
             
             <i class="icon icon-book-fill"></i>
             
@@ -162,7 +162,7 @@
         
         
         <li class="menu-item menu-item-links">
-          <a href="/ei.github.io/links">
+          <a href="/clg/links">
             
             <i class="icon icon-friendship"></i>
             
@@ -172,7 +172,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/ei.github.io/about">
+          <a href="/clg/about">
             
             <i class="icon icon-cup-fill"></i>
             
@@ -189,7 +189,7 @@
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -225,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/ei.github.io/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2026/01/">January 2026</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2025/03/">March 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/clg/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -244,7 +244,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
+                <a href="/clg/2026/01/11/%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/" class="title">网络知识</a>
               </p>
               <p class="item-date">
                 <time datetime="2026-01-11T07:54:33.000Z" itemprop="datePublished">2026-01-11</time>
@@ -259,10 +259,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/hello-world/" class="title">Hello World</a>
+                <a href="/clg/2025/03/26/hello-world/" class="title">Hello World</a>
               </p>
               <p class="item-date">
-                <time datetime="2025-03-06T06:44:13.868Z" itemprop="datePublished">2025-03-06</time>
+                <time datetime="2025-03-26T09:33:08.174Z" itemprop="datePublished">2025-03-26</time>
               </p>
             </div>
           </li>
@@ -274,7 +274,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
+                <a href="/clg/2025/03/06/Clickhouse%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="title">Clickhouse由浅入深</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:22:33.000Z" itemprop="datePublished">2025-03-06</time>
@@ -289,7 +289,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
+                <a href="/clg/2025/03/06/Yarn%E5%9F%BA%E7%A1%80/" class="title">Yarn基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:15:04.000Z" itemprop="datePublished">2025-03-06</time>
@@ -304,7 +304,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/ei.github.io/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
+                <a href="/clg/2025/03/05/Flink%E5%9F%BA%E7%A1%80/" class="title">Flink基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-05T06:56:26.000Z" itemprop="datePublished">2025-03-05</time>
@@ -340,7 +340,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="article-date">
+	<a href="/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" class="article-date">
 	  <time datetime="2021-12-06T04:59:12.000Z" itemprop="datePublished">2021-12-06</time>
 	</a>
 </span>
@@ -349,22 +349,22 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="hadoop&#x4ECB;&#x7ECD;"><a href="#hadoop&#x4ECB;&#x7ECD;" class="headerlink" title="hadoop&#x4ECB;&#x7ECD;"></a>hadoop&#x4ECB;&#x7ECD;</h2><p><img src="/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif" alt="0"></p>
-<h2 id="HDFS&#x8BE6;&#x89E3;"><a href="#HDFS&#x8BE6;&#x89E3;" class="headerlink" title="HDFS&#x8BE6;&#x89E3;"></a>HDFS&#x8BE6;&#x89E3;</h2><p><img src="/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.jpg" alt="1"></p>
-<p>HDFS&#x4E22;&#x5757;&#x4E22;&#x526F;&#x672C;&#x4FEE;&#x590D;&#xFF1A;<br>hdfs fsck /<br>hdfs debug recoverLease -path &#x6587;&#x4EF6; -retries 3   #&#x91CA;&#x653E;&#x79DF;&#x7EA6;<br>&#x67E5;&#x770B;block &#x5757;&#x4FE1;&#x606F;&#xFF1A;<br>hdfs fsck -blockId blk_1672302277<br>&#x67E5;&#x770B;&#x673A;&#x67B6;&#xFF1A;<br>hdfs dfsadmin -printTopology<br>&#x4FEE;&#x6539;hdfs &#x6570;&#x636E;&#x526F;&#x672C;&#x6570; &#x5982;&#x526F;&#x672C;&#x6570;&#x4E3A;2&#xFF1A;<br>hdfs dfs -setrep -R -w 2 /user/eimrs/<br>&#x624B;&#x52A8;&#x9000;&#x51FA;&#x5B89;&#x5168;&#x6A21;&#x5F0F;:<br>hdfs dfsadmin -safemode leave<br>HDFS&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#xFF1A;<br>dfs.datanode.du.reserved.percentage  = 15%</p>
-<h2 id="HDFS&#x6269;&#x5BB9;"><a href="#HDFS&#x6269;&#x5BB9;" class="headerlink" title="HDFS&#x6269;&#x5BB9;"></a>HDFS&#x6269;&#x5BB9;</h2><p>&#x9488;&#x5BF9;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x5728;&#x7EBF;&#x78C1;&#x76D8;&#x6269;&#x5BB9;&#x7684;&#x65B9;&#x6848;&#xFF1A;<a target="_blank" rel="noopener" href="https://support.huaweicloud.com/usermanual-evs/evs_01_0109.html#section3">https://support.huaweicloud.com/usermanual-evs/evs_01_0109.html#section3</a><br>1:yum install cloud-utils-growpart gdisk<br>2:fdisk -l<br>3:lsblk<br>4:growpart  /dev/vdb 1   (&#x8981;&#x9488;&#x5BF9;&#x54EA;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x54EA;&#x4E2A;&#x5206;&#x533A;&#x6269;&#x5BB9;&#xFF0C;/dev/vdb  &#x8BBE;&#x5907;&#x6807;&#x8BC6;&#xFF0C;1 &#x6807;&#x8BC6;vdb1 &#x5206;&#x533A;)<br>5:resize2fs  /dev/vdb1     (&#x6269;&#x5BB9;&#x7684;&#x5177;&#x4F53;&#x5206;&#x533A; &#xFF0C;vdb1&#x5206;&#x533A; )</p>
-<h2 id="&#x7EDF;&#x8BA1;namenode-&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x7EBF;&#x7A0B;&#x6570;&#xFF1A;-jps-grep-NameNode-awk-&#x2018;-print-1-&#x2019;-xargs-i-pstree-p-wc-l"><a href="#&#x7EDF;&#x8BA1;namenode-&#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x7EBF;&#x7A0B;&#x6570;&#xFF1A;-jps-grep-NameNode-awk-&#x2018;-print-1-&#x2019;-xargs-i-pstree-p-wc-l" class="headerlink" title="&#x7EDF;&#x8BA1;namenode &#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x7EBF;&#x7A0B;&#x6570;&#xFF1A; jps | grep NameNode |awk &#x2018;{print $1}&#x2019;| xargs -i pstree -p {} |wc -l"></a>&#x7EDF;&#x8BA1;namenode &#x7684;&#x8FDB;&#x7A0B;&#x4E2D;&#x7EBF;&#x7A0B;&#x6570;&#xFF1A; jps | grep NameNode |awk &#x2018;{print $1}&#x2019;| xargs -i pstree -p {} |wc -l</h2><h2 id="hdfs"><a href="#hdfs" class="headerlink" title="hdfs"></a>hdfs</h2><pre><code>&#x8FD0;&#x884C;dfs&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x68C0;&#x67E5;&#x7A0B;&#x5E8F;&#xFF1A;
+        <h2 id="hadoop介绍"><a href="#hadoop介绍" class="headerlink" title="hadoop介绍"></a>hadoop介绍</h2><p><img src="/clg/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.gif" alt="0"></p>
+<h2 id="HDFS详解"><a href="#HDFS详解" class="headerlink" title="HDFS详解"></a>HDFS详解</h2><p><img src="/clg/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/hadoop.jpg" alt="1"></p>
+<p>HDFS丢块丢副本修复：<br>hdfs fsck &#x2F;<br>hdfs debug recoverLease -path 文件 -retries 3   #释放租约<br>查看block 块信息：<br>hdfs fsck -blockId blk_1672302277<br>查看机架：<br>hdfs dfsadmin -printTopology<br>修改hdfs 数据副本数 如副本数为2：<br>hdfs dfs -setrep -R -w 2 &#x2F;user&#x2F;eimrs&#x2F;<br>手动退出安全模式:<br>hdfs dfsadmin -safemode leave<br>HDFS存储空间不足：<br>dfs.datanode.du.reserved.percentage  &#x3D; 15%</p>
+<h2 id="HDFS扩容"><a href="#HDFS扩容" class="headerlink" title="HDFS扩容"></a>HDFS扩容</h2><p>针对节点进行在线磁盘扩容的方案：<a target="_blank" rel="noopener" href="https://support.huaweicloud.com/usermanual-evs/evs_01_0109.html#section3">https://support.huaweicloud.com/usermanual-evs/evs_01_0109.html#section3</a><br>1:yum install cloud-utils-growpart gdisk<br>2:fdisk -l<br>3:lsblk<br>4:growpart  &#x2F;dev&#x2F;vdb 1   (要针对哪块设备的哪个分区扩容，&#x2F;dev&#x2F;vdb  设备标识，1 标识vdb1 分区)<br>5:resize2fs  &#x2F;dev&#x2F;vdb1     (扩容的具体分区 ，vdb1分区 )</p>
+<h2 id="统计namenode-的进程中线程数：-jps-grep-NameNode-awk-‘-print-1-’-xargs-i-pstree-p-wc-l"><a href="#统计namenode-的进程中线程数：-jps-grep-NameNode-awk-‘-print-1-’-xargs-i-pstree-p-wc-l" class="headerlink" title="统计namenode 的进程中线程数： jps | grep NameNode |awk ‘{print $1}’| xargs -i pstree -p {} |wc -l"></a>统计namenode 的进程中线程数： jps | grep NameNode |awk ‘{print $1}’| xargs -i pstree -p {} |wc -l</h2><h2 id="hdfs"><a href="#hdfs" class="headerlink" title="hdfs"></a>hdfs</h2><pre><code>运行dfs文件系统检查程序：
 hdfs fsck /
-&#x8FD0;&#x884C;&#x4E00;&#x4E2A;DFS admin &#x5BA2;&#x6237;&#x7AEF;&#x68C0;&#x67E5;&#x62A5;&#x544A;&#xFF1A;
+运行一个DFS admin 客户端检查报告：
 hdfs  dfsadmin -report
 </code></pre>
-<p>   HDFS &#x547D;&#x4EE4;&#x4E0D;&#x6253;&#x5370;bebug &#x65E5;&#x5FD7;<br>     /opt/client/HDFS/component_env<br>    export HADOOP_ROOT_LOGGER=ERROR,console</p>
+<p>   HDFS 命令不打印bebug 日志<br>     &#x2F;opt&#x2F;client&#x2F;HDFS&#x2F;component_env<br>    export HADOOP_ROOT_LOGGER&#x3D;ERROR,console</p>
 
       
     </div>
@@ -374,7 +374,7 @@ hdfs  dfsadmin -report
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hadoop基础-由浅入深" target="_blank" rel="external">https://c-mrrobot.github.io/ei.github.io/2021/12/06/Hadoop基础-由浅入深/</a>
+      <a href="https://ccy-master.github.io/clg/2021/12/06/Hadoop%E5%9F%BA%E7%A1%80-%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hadoop基础-由浅入深" target="_blank" rel="external">https://ccy-master.github.io/clg/2021/12/06/Hadoop基础-由浅入深/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -389,7 +389,7 @@ hdfs  dfsadmin -report
     <figure class="media">
       <div class="media-left">
         <a href="https://github.com/C-MrRobot" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/ei.github.io/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/clg/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
@@ -421,12 +421,12 @@ hdfs  dfsadmin -report
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/ei.github.io/2021/12/11/Spark%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Spark由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/clg/2021/12/11/Spark%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Spark由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/ei.github.io/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/" title="Linux运维绝技"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/" title="Linux运维绝技"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -461,14 +461,14 @@ hdfs  dfsadmin -report
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/alipay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/ei.github.io/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
+                <img src="/clg/images/donate/wechatpay.jpg" alt="Scan Qrcode" title="Scan" />
               </div>
               <p class="text-muted mv">Scan this qrcode</p>
               <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
@@ -503,7 +503,7 @@ hdfs  dfsadmin -report
         
         <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
         
-        <li><a href="/ei.github.io/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        <li><a href="/clg/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
 
@@ -519,10 +519,10 @@ hdfs  dfsadmin -report
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="/ei.github.io/js/plugin.min.js"></script>
+<script src="/clg/js/plugin.min.js"></script>
 
 
-<script src="/ei.github.io/js/application.js"></script>
+<script src="/clg/js/application.js"></script>
 
 
     <script>
@@ -535,14 +535,14 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
-        ROOT_URL: '/ei.github.io/',
-        CONTENT_URL: '/ei.github.io/content.json',
+        ROOT_URL: '/clg/',
+        CONTENT_URL: '/clg/content.json',
     };
     window.INSIGHT_CONFIG = INSIGHT_CONFIG;
 })(window);
 </script>
 
-<script src="/ei.github.io/js/insight.js"></script>
+<script src="/clg/js/insight.js"></script>
 
 
 
