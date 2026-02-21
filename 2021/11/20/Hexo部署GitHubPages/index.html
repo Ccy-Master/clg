@@ -17,16 +17,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Hexo部署在GitHub-Pages指导 | Bigdata</title>
+  <title>Hexo部署GitHubPages | Bigdata</title>
   <meta name="description" content="hexo部署在github pages指导1. 本地安装Hexo环境 (Linux环境,以Debain发行版为例)12345$apt install nodejs-lts$npm install -g hexo-cli$npm install hexo-deployer-git$hexo g$hexo d 2. 本地准备部署工具1$apk install openssh git vim  3. 生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo部署在GitHub-Pages指导">
+<meta property="og:title" content="Hexo部署GitHubPages">
 <meta property="og:url" content="https://ccy-master.github.io/clg/2021/11/20/Hexo%E9%83%A8%E7%BD%B2GitHubPages/index.html">
 <meta property="og:site_name" content="Bigdata大数据">
 <meta property="og:description" content="hexo部署在github pages指导1. 本地安装Hexo环境 (Linux环境,以Debain发行版为例)12345$apt install nodejs-lts$npm install -g hexo-cli$npm install hexo-deployer-git$hexo g$hexo d 2. 本地准备部署工具1$apk install openssh git vim  3. 生">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-11-20T01:52:43.000Z">
-<meta property="article:modified_time" content="2021-12-11T13:31:11.000Z">
+<meta property="article:modified_time" content="2026-02-21T05:01:38.141Z">
 <meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -256,7 +256,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/clg/2025/03/06/Clickhouse%E5%9F%BA%E7%A1%80/" class="title">Clickhouse由浅入深</a>
+                <a href="/clg/2025/03/06/Clickhouse%E5%9F%BA%E7%A1%80/" class="title">Clickhouse基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2025-03-06T03:22:33.000Z" itemprop="datePublished">2025-03-06</time>
@@ -301,7 +301,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/clg/2021/12/11/Spark%E5%9F%BA%E7%A1%80/" class="title">Spark由浅入深</a>
+                <a href="/clg/2021/12/11/Spark%E5%9F%BA%E7%A1%80/" class="title">Spark基础</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-12-11T13:06:57.000Z" itemprop="datePublished">2021-12-11</time>
@@ -329,7 +329,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo部署在GitHub-Pages指导
+      Hexo部署GitHubPages
     </h1>
   
 
@@ -356,7 +356,7 @@
 <h2 id="2-本地准备部署工具"><a href="#2-本地准备部署工具" class="headerlink" title="2. 本地准备部署工具"></a>2. 本地准备部署工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$apk</span> install openssh git vim </span><br></pre></td></tr></table></figure>
 <h2 id="3-生成ssh公钥"><a href="#3-生成ssh公钥" class="headerlink" title="3. 生成ssh公钥"></a>3. 生成ssh公钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ssh</span>-keygen -t rsa -C <span class="string">&quot;user.email&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="4-Github环境准备"><a href="#4-Github环境准备" class="headerlink" title="4. Github环境准备"></a>4. Github环境准备</h2><h2 id="设置中先添加ssh公钥"><a href="#设置中先添加ssh公钥" class="headerlink" title="设置中先添加ssh公钥"></a>设置中先添加ssh公钥</h2><h2 id="创建github仓库-命名-username-github-io"><a href="#创建github仓库-命名-username-github-io" class="headerlink" title="创建github仓库 命名:username.github.io"></a>创建github仓库 命名:username.github.io</h2><h2 id="克隆仓库到本地目录"><a href="#克隆仓库到本地目录" class="headerlink" title="克隆仓库到本地目录"></a>克隆仓库到本地目录</h2><h2 id="复制本地blog目录下的文件到仓库中"><a href="#复制本地blog目录下的文件到仓库中" class="headerlink" title="复制本地blog目录下的文件到仓库中"></a>复制本地blog目录下的文件到仓库中</h2><h2 id="修改-’-config-yml’-文件，末尾添加如下信息"><a href="#修改-’-config-yml’-文件，末尾添加如下信息" class="headerlink" title="修改:’_config.yml’ 文件，末尾添加如下信息:"></a>修改:’_config.yml’ 文件，末尾添加如下信息:</h2><p> deploy:<br>    type: git<br>    repo: <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">git@github.com</a>:C-MrRobot&#x2F;ei.github.io.git<br>    branch: main   (注意:github默认是main分支)</p>
+<h2 id="4-Github环境准备"><a href="#4-Github环境准备" class="headerlink" title="4. Github环境准备"></a>4. Github环境准备</h2><h2 id="设置中先添加ssh公钥"><a href="#设置中先添加ssh公钥" class="headerlink" title="设置中先添加ssh公钥"></a>设置中先添加ssh公钥</h2><h2 id="创建github仓库-命名-username-github-io"><a href="#创建github仓库-命名-username-github-io" class="headerlink" title="创建github仓库 命名:username.github.io"></a>创建github仓库 命名:username.github.io</h2><h2 id="克隆仓库到本地目录"><a href="#克隆仓库到本地目录" class="headerlink" title="克隆仓库到本地目录"></a>克隆仓库到本地目录</h2><h2 id="复制本地blog目录下的文件到仓库中"><a href="#复制本地blog目录下的文件到仓库中" class="headerlink" title="复制本地blog目录下的文件到仓库中"></a>复制本地blog目录下的文件到仓库中</h2><h2 id="修改-’-config-yml’-文件，末尾添加如下信息"><a href="#修改-’-config-yml’-文件，末尾添加如下信息" class="headerlink" title="修改:’_config.yml’ 文件，末尾添加如下信息:"></a>修改:’_config.yml’ 文件，末尾添加如下信息:</h2><p> deploy:<br>    type: git<br>    repo: <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;">git@github.com</a>:C-MrRobot&#x2F;ei.github.io.git<br>    branch: main   (注意:github默认是main分支)</p>
 <h2 id="在clone下来的仓库中添加插件，配置githubconfig"><a href="#在clone下来的仓库中添加插件，配置githubconfig" class="headerlink" title="在clone下来的仓库中添加插件，配置githubconfig"></a>在clone下来的仓库中添加插件，配置githubconfig</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install hexo-deployer-git</span><br><span class="line"><span class="variable">$git</span> config --global core.autocrlf <span class="literal">false</span></span><br><span class="line"><span class="variable">$git</span> config --global user.email <span class="string">&quot;useremail&quot;</span></span><br><span class="line"><span class="variable">$git</span> config --global user.name <span class="string">&quot;username&quot;</span></span><br></pre></td></tr></table></figure>
 <h3 id="5-推送代码到github"><a href="#5-推送代码到github" class="headerlink" title="5. 推送代码到github"></a>5. 推送代码到github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> clean</span><br><span class="line"><span class="variable">$hexo</span> g </span><br><span class="line"><span class="variable">$hexo</span> d</span><br></pre></td></tr></table></figure>
 <h2 id="6-前往github-仓库中的设置配置git-pages页面，选择要显示的分支保存即可"><a href="#6-前往github-仓库中的设置配置git-pages页面，选择要显示的分支保存即可" class="headerlink" title="6. 前往github 仓库中的设置配置git pages页面，选择要显示的分支保存即可"></a>6. 前往github 仓库中的设置配置git pages页面，选择要显示的分支保存即可</h2><h1 id="注意-仓库属性为public-公开的才能提供页面服务，private-私有仓库不能显示，每改变一次仓库属性，需要重新配置git-pages。"><a href="#注意-仓库属性为public-公开的才能提供页面服务，private-私有仓库不能显示，每改变一次仓库属性，需要重新配置git-pages。" class="headerlink" title="注意:仓库属性为public 公开的才能提供页面服务，private 私有仓库不能显示，每改变一次仓库属性，需要重新配置git pages。"></a>注意:仓库属性为public 公开的才能提供页面服务，private 私有仓库不能显示，每改变一次仓库属性，需要重新配置git pages。</h1>
@@ -368,7 +368,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://ccy-master.github.io/clg/2021/11/20/Hexo%E9%83%A8%E7%BD%B2GitHubPages/" title="Hexo部署在GitHub-Pages指导" target="_blank" rel="external">https://ccy-master.github.io/clg/2021/11/20/Hexo部署GitHubPages/</a>
+      <a href="https://ccy-master.github.io/clg/2021/11/20/Hexo%E9%83%A8%E7%BD%B2GitHubPages/" title="Hexo部署GitHubPages" target="_blank" rel="external">https://ccy-master.github.io/clg/2021/11/20/Hexo部署GitHubPages/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -420,7 +420,7 @@
     
     
     <li class="next">
-      <a href="/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80/" title="Hive基础-由浅入深"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/clg/2021/11/18/Hive%E5%9F%BA%E7%A1%80/" title="Hive基础"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
