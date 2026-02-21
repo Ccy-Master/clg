@@ -25,13 +25,13 @@
 <meta property="og:site_name" content="Bigdata大数据">
 <meta property="og:description" content="1.查看用户密码策略1$charge -l root 2.查看应用进程和占用端口和启动时间1234$ps -ef|grep nodeagent$ps -ef|grep $&amp;#123;pid&amp;#125;$netstat -anp|grep $&amp;#123;pid&amp;#125;$ps -o lstart $&amp;#123;pid&amp;#125; 3.修改目录及文件权限12345$chmod -R 755 &#x2F;op">
 <meta property="og:locale">
-<meta property="og:image" content="https://ccy-master.github.io/clg/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/Linux.jpg">
-<meta property="og:image" content="https://ccy-master.github.io/clg/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/MrRobot.jpg">
+<meta property="og:image" content="https://ccy-master.github.io/clg/images/Linux.jpg">
+<meta property="og:image" content="https://ccy-master.github.io/clg/images/MrRobot.jpg">
 <meta property="article:published_time" content="2021-12-04T00:36:37.000Z">
-<meta property="article:modified_time" content="2025-03-26T09:35:01.686Z">
+<meta property="article:modified_time" content="2026-02-21T05:13:56.077Z">
 <meta property="article:author" content="MrRobot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ccy-master.github.io/clg/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/Linux.jpg">
+<meta name="twitter:image" content="https://ccy-master.github.io/clg/images/Linux.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://ccy-master.github.io/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/index.html">
   
@@ -355,17 +355,17 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="/clg/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/Linux.jpg" alt="Linux"></p>
+        <p><img src="/clg/images/Linux.jpg"></p>
 <h2 id="1-查看用户密码策略"><a href="#1-查看用户密码策略" class="headerlink" title="1.查看用户密码策略"></a>1.查看用户密码策略</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$charge</span> -l root</span><br></pre></td></tr></table></figure>
 <h2 id="2-查看应用进程和占用端口和启动时间"><a href="#2-查看应用进程和占用端口和启动时间" class="headerlink" title="2.查看应用进程和占用端口和启动时间"></a>2.查看应用进程和占用端口和启动时间</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ps</span> -ef|grep nodeagent</span><br><span class="line"><span class="variable">$ps</span> -ef|grep <span class="variable">$&#123;pid&#125;</span></span><br><span class="line"><span class="variable">$netstat</span> -anp|grep <span class="variable">$&#123;pid&#125;</span></span><br><span class="line"><span class="variable">$ps</span> -o lstart <span class="variable">$&#123;pid&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="3-修改目录及文件权限"><a href="#3-修改目录及文件权限" class="headerlink" title="3.修改目录及文件权限"></a>3.修改目录及文件权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$chmod</span> -R 755 /opt/client/</span><br><span class="line"><span class="variable">$chmod</span> 777 test.py</span><br><span class="line"><span class="variable">$chown</span> -R root:root /opt/client/</span><br><span class="line"><span class="variable">$chown</span> root:root test.py</span><br><span class="line"><span class="variable">$sudo</span> <span class="built_in">chmod</span> u+s /bin/ping</span><br></pre></td></tr></table></figure>
 
-<p><img src="/clg/clg/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/2021/12/04/Linux%E8%BF%90%E7%BB%B4%E7%BB%9D%E6%8A%80/MrRobot.jpg" alt="1"></p>
+<p><img src="/clg/images/MrRobot.jpg"></p>
 <h2 id="4-导出某目录文件权限并快速恢复"><a href="#4-导出某目录文件权限并快速恢复" class="headerlink" title="4.导出某目录文件权限并快速恢复"></a>4.导出某目录文件权限并快速恢复</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$getfacl</span> -pR /opt &gt;&gt; /tmp/systemp.bak</span><br><span class="line"><span class="variable">$setfacl</span> --restore=/tmp/systemp.bak</span><br></pre></td></tr></table></figure>
 <h2 id="5-创建用户并加入用户组"><a href="#5-创建用户并加入用户组" class="headerlink" title="5.创建用户并加入用户组"></a>5.创建用户并加入用户组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$adduser</span> bigdata</span><br><span class="line"><span class="variable">$passwd</span> bigdata</span><br><span class="line"><span class="variable">$usermod</span> -a -G root bigdata</span><br><span class="line"><span class="variable">$id</span> bigdata</span><br><span class="line"><span class="variable">$groups</span> bigdata</span><br><span class="line"><span class="variable">$su</span> bigdata</span><br><span class="line"><span class="variable">$whoimi</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="6-查看历史负载"><a href="#6-查看历史负载" class="headerlink" title="6.查看历史负载"></a>6.查看历史负载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sar</span> -u</span><br><span class="line">iostat -x 2</span><br><span class="line">iostat -mdx 1</span><br></pre></td></tr></table></figure>
-<h2 id="7-Linux互信免密"><a href="#7-Linux互信免密" class="headerlink" title="7.Linux互信免密"></a>7.Linux互信免密</h2><p>linux 免密互信登录配置：<br>ssh-keygen -t rsa -C “备注”<br>ssh-copy-id -i <a href="mailto:&#114;&#x6f;&#x6f;&#116;&#x40;&#x31;&#x39;&#x32;&#x2e;&#x31;&#54;&#x38;&#46;&#x30;&#x2e;&#x33;&#49;">root@192.168.0.31</a><br>ssh <a href="mailto:&#x72;&#111;&#x6f;&#x74;&#64;&#x31;&#57;&#50;&#x2e;&#49;&#54;&#x38;&#x2e;&#x30;&#46;&#51;&#x31;">root@192.168.0.31</a></p>
+<h2 id="7-Linux互信免密"><a href="#7-Linux互信免密" class="headerlink" title="7.Linux互信免密"></a>7.Linux互信免密</h2><p>linux 免密互信登录配置：<br>ssh-keygen -t rsa -C “备注”<br>ssh-copy-id -i <a href="mailto:&#x72;&#x6f;&#111;&#116;&#x40;&#49;&#x39;&#50;&#46;&#x31;&#x36;&#x38;&#46;&#x30;&#x2e;&#x33;&#49;">root@192.168.0.31</a><br>ssh <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#49;&#x39;&#50;&#x2e;&#49;&#54;&#56;&#46;&#x30;&#46;&#x33;&#x31;">root@192.168.0.31</a></p>
 <p>cat ~&#x2F;.ssh&#x2F;id_rsa.pub &gt; authorized_keys</p>
 <h2 id="8-命令行快速检索"><a href="#8-命令行快速检索" class="headerlink" title="8.命令行快速检索"></a>8.命令行快速检索</h2><p>linux在执行命令时，对于已经输入的命令，可以通过关上下键进行翻找，如果是最近几条，很容易找到，如果是很久之前的命令，依旧使用上下键查找就会力不从心。<br>1、方法一 history命令,History禁用开启：sed -i “s&#x2F;export HISTSIZE&#x3D;.*&#x2F;export HISTSIZE&#x3D;10000&#x2F;“ &#x2F;etc&#x2F;profile ;source &#x2F;etc&#x2F;profile<br>2、方法二 ctr+r快捷键（推荐） 一个比较快速的方法是使用”ctrl+r”快捷键，在命令行使用ctrl+r，ctrl+r是反向搜索 (reverse-i-search )</p>
 <h2 id="9-Find命令"><a href="#9-Find命令" class="headerlink" title="9. Find命令"></a>9. Find命令</h2><p>find .&#x2F; -name  threadDump* |exec rm -rf threadDump*<br>find .&#x2F; -name  threadDump* |xargs rm -rf  threadDump*</p>
@@ -427,7 +427,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/clg/2021/12/06/Hadoop%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hadoop基础-由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/clg/2021/12/06/Hadoop%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1/" title="Hadoop由浅入深"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
