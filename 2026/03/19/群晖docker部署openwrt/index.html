@@ -18,15 +18,15 @@
   
   
   <title>群晖docker部署openwrt | Bigdata</title>
-  <meta name="description" content="群晖docker部署openwrtDocker OpenWRT  1: 开启网卡混杂模式ip link set ovs_eth0 promisc onip link set eth0 promisc on 2: 创建macvlandocker network create -d macvlan    –subnet&#x3D;192.168.10.0&#x2F;24    –gateway&amp;#x3">
+  <meta name="description" content="群晖docker部署openwrtDocker OpenWRT  1: 开启网卡混杂模式#ip link set ovs_eth0 promisc on#ip link set eth0 promisc on 2: 创建macvlan#docker network create -d macvlan    –subnet&#x3D;192.168.10.0&#x2F;24    –gateway&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="群晖docker部署openwrt">
 <meta property="og:url" content="https://ccy-master.github.io/eiops/2026/03/19/%E7%BE%A4%E6%99%96docker%E9%83%A8%E7%BD%B2openwrt/index.html">
 <meta property="og:site_name" content="BigData大数据">
-<meta property="og:description" content="群晖docker部署openwrtDocker OpenWRT  1: 开启网卡混杂模式ip link set ovs_eth0 promisc onip link set eth0 promisc on 2: 创建macvlandocker network create -d macvlan    –subnet&#x3D;192.168.10.0&#x2F;24    –gateway&amp;#x3">
+<meta property="og:description" content="群晖docker部署openwrtDocker OpenWRT  1: 开启网卡混杂模式#ip link set ovs_eth0 promisc on#ip link set eth0 promisc on 2: 创建macvlan#docker network create -d macvlan    –subnet&#x3D;192.168.10.0&#x2F;24    –gateway&amp;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-03-19T11:08:04.000Z">
-<meta property="article:modified_time" content="2026-03-19T11:26:54.526Z">
+<meta property="article:modified_time" content="2026-03-19T11:29:17.738Z">
 <meta property="article:author" content="Ccy-Master">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -324,17 +324,17 @@
       
         <h2 id="群晖docker部署openwrt"><a href="#群晖docker部署openwrt" class="headerlink" title="群晖docker部署openwrt"></a>群晖docker部署openwrt</h2><pre><code>Docker OpenWRT
 </code></pre>
-<h3 id="1-开启网卡混杂模式"><a href="#1-开启网卡混杂模式" class="headerlink" title="1: 开启网卡混杂模式"></a>1: 开启网卡混杂模式</h3><p>ip link set ovs_eth0 promisc on<br>ip link set eth0 promisc on</p>
-<h3 id="2-创建macvlan"><a href="#2-创建macvlan" class="headerlink" title="2: 创建macvlan"></a>2: 创建macvlan</h3><p>docker network create -d macvlan <br>   –subnet&#x3D;192.168.10.0&#x2F;24 <br>   –gateway&#x3D;192.168.10.1 <br>   -o parent&#x3D;ovs_eth0 <br>   openwrt</p>
-<h3 id="3-启动容器"><a href="#3-启动容器" class="headerlink" title="3: 启动容器"></a>3: 启动容器</h3><p>docker run -d <br>   –restart always <br>   –name DSM-OpenWrt <br>   –network openwrt <br>   –privileged&#x3D;true <br>   zzsrv&#x2F;openwrt:latest &#x2F;sbin&#x2F;init</p>
+<h3 id="1-开启网卡混杂模式"><a href="#1-开启网卡混杂模式" class="headerlink" title="1: 开启网卡混杂模式"></a>1: 开启网卡混杂模式</h3><p>#ip link set ovs_eth0 promisc on<br>#ip link set eth0 promisc on</p>
+<h3 id="2-创建macvlan"><a href="#2-创建macvlan" class="headerlink" title="2: 创建macvlan"></a>2: 创建macvlan</h3><p>#docker network create -d macvlan <br>   –subnet&#x3D;192.168.10.0&#x2F;24 <br>   –gateway&#x3D;192.168.10.1 <br>   -o parent&#x3D;ovs_eth0 <br>   openwrt</p>
+<h3 id="3-启动容器"><a href="#3-启动容器" class="headerlink" title="3: 启动容器"></a>3: 启动容器</h3><p>#docker run -d <br>   –restart always <br>   –name DSM-OpenWrt <br>   –network openwrt <br>   –privileged&#x3D;true <br>   zzsrv&#x2F;openwrt:latest &#x2F;sbin&#x2F;init</p>
 <h3 id="4-etc-config-network配置"><a href="#4-etc-config-network配置" class="headerlink" title="4: &#x2F;etc&#x2F;config&#x2F;network配置"></a>4: &#x2F;etc&#x2F;config&#x2F;network配置</h3><p>config interface ‘loopback’<br>        option proto ‘static’<br>        option ipaddr ‘127.0.0.1’<br>        option netmask ‘255.0.0.0’<br>        option device ‘lo’</p>
 <p>config globals ‘globals’<br>        option packet_steering ‘1’</p>
 <p>config interface ‘lan’<br>        option type ‘macvlan’<br>        option proto ‘static’<br>        option netmask ‘255.255.255.0’<br>        option ip6assign ‘60’<br>        option ipaddr ‘192.168.10.30’<br>        option gateway ‘192.168.10.1’<br>        option dns ‘192.168.10.1’<br>        option device ‘eth0’</p>
 <p>config device<br>        option name ‘br-lan’<br>        option type ‘macvlan’<br>        list ports ‘eth0’</p>
-<h3 id="5-重启网卡服务"><a href="#5-重启网卡服务" class="headerlink" title="5: 重启网卡服务"></a>5: 重启网卡服务</h3><pre><code>/etc/init.d/network restart
+<h3 id="5-重启网卡服务"><a href="#5-重启网卡服务" class="headerlink" title="5: 重启网卡服务"></a>5: 重启网卡服务</h3><pre><code>#/etc/init.d/network restart
 </code></pre>
-<h3 id="6-浏览器打开OpenWrt页面-http-192-168-10-30"><a href="#6-浏览器打开OpenWrt页面-http-192-168-10-30" class="headerlink" title="6: 浏览器打开OpenWrt页面  http://192.168.10.30/"></a>6: 浏览器打开OpenWrt页面  <a target="_blank" rel="noopener" href="http://192.168.10.30/">http://192.168.10.30/</a></h3><h3 id="7-安装iStore商店-https-doc-istoreos-com-zh-guide-istore"><a href="#7-安装iStore商店-https-doc-istoreos-com-zh-guide-istore" class="headerlink" title="7: 安装iStore商店 https://doc.istoreos.com/zh/guide/istore/"></a>7: 安装iStore商店 <a target="_blank" rel="noopener" href="https://doc.istoreos.com/zh/guide/istore/">https://doc.istoreos.com/zh/guide/istore/</a></h3><p> opkg update || exit 1<br> cd &#x2F;tmp<br> wget <a target="_blank" rel="noopener" href="https://github.com/linkease/openwrt-app-actions/raw/main/applications/luci-app-systools/root/usr/share/systools/istore-reinstall.run">https://github.com/linkease/openwrt-app-actions/raw/main/applications/luci-app-systools/root/usr/share/systools/istore-reinstall.run</a><br> chmod 755 istore-reinstall.run<br> .&#x2F;istore-reinstall.run</p>
-<h3 id="8-安装V2rayA-https-proxyguide-github-io-v2ray-v2raya-openwrt"><a href="#8-安装V2rayA-https-proxyguide-github-io-v2ray-v2raya-openwrt" class="headerlink" title="8: 安装V2rayA https://proxyguide.github.io/v2ray/v2raya-openwrt/"></a>8: 安装V2rayA <a target="_blank" rel="noopener" href="https://proxyguide.github.io/v2ray/v2raya-openwrt/">https://proxyguide.github.io/v2ray/v2raya-openwrt/</a></h3><p> opkg update<br> opkg install luci-i18n-v2raya-zh-cn v2ray-geoip v2ray-geosite<br> opkg update<br> opkg install v2raya</p>
+<h3 id="6-浏览器打开OpenWrt页面-http-192-168-10-30"><a href="#6-浏览器打开OpenWrt页面-http-192-168-10-30" class="headerlink" title="6: 浏览器打开OpenWrt页面  http://192.168.10.30/"></a>6: 浏览器打开OpenWrt页面  <a target="_blank" rel="noopener" href="http://192.168.10.30/">http://192.168.10.30/</a></h3><h3 id="7-安装iStore商店-https-doc-istoreos-com-zh-guide-istore"><a href="#7-安装iStore商店-https-doc-istoreos-com-zh-guide-istore" class="headerlink" title="7: 安装iStore商店 https://doc.istoreos.com/zh/guide/istore/"></a>7: 安装iStore商店 <a target="_blank" rel="noopener" href="https://doc.istoreos.com/zh/guide/istore/">https://doc.istoreos.com/zh/guide/istore/</a></h3><p> #opkg update || exit 1<br> #cd &#x2F;tmp<br> #wget <a target="_blank" rel="noopener" href="https://github.com/linkease/openwrt-app-actions/raw/main/applications/luci-app-systools/root/usr/share/systools/istore-reinstall.run">https://github.com/linkease/openwrt-app-actions/raw/main/applications/luci-app-systools/root/usr/share/systools/istore-reinstall.run</a><br> #chmod 755 istore-reinstall.run<br> #.&#x2F;istore-reinstall.run</p>
+<h3 id="8-安装V2rayA-https-proxyguide-github-io-v2ray-v2raya-openwrt"><a href="#8-安装V2rayA-https-proxyguide-github-io-v2ray-v2raya-openwrt" class="headerlink" title="8: 安装V2rayA https://proxyguide.github.io/v2ray/v2raya-openwrt/"></a>8: 安装V2rayA <a target="_blank" rel="noopener" href="https://proxyguide.github.io/v2ray/v2raya-openwrt/">https://proxyguide.github.io/v2ray/v2raya-openwrt/</a></h3><p> #opkg update<br> #opkg install luci-i18n-v2raya-zh-cn v2ray-geoip v2ray-geosite<br> #opkg update<br> #opkg install v2raya</p>
 <h3 id="9-V2rayA导入订阅节点。"><a href="#9-V2rayA导入订阅节点。" class="headerlink" title="9: V2rayA导入订阅节点。"></a>9: V2rayA导入订阅节点。</h3>
       
     </div>
